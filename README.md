@@ -1,3 +1,6 @@
+[![Build
+Status](https://travis-ci.org/techprobono/techprobono.org.png?branch=master)](https://travis-ci.org/techprobono/techprobono.org)
+
 techprobono
 ===========
 
