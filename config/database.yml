@@ -50,8 +50,16 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  username: postgres
   database: techprobono_test
 
 production:
   <<: *default
-  database: techprobono_production
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
+  host:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
+  port:     <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>

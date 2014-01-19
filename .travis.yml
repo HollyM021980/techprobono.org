@@ -1,0 +1,6 @@
+nguage: ruby
+rvm:
+  - 2.0.0
+  - 1.9.3
+before_script:
+  - psql -c 'create database techprobono_test;' -U postgres
