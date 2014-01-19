@@ -3,6 +3,4 @@ rvm:
   - 2.0.0
   - 1.9.3
 before_script:
-  - psql -c "CREATE USER techprobono WITH PASSWORD '';" -U postgres
-  - psql -c 'CREATE DATABASE techprobono_test WITH OWNER = techprobono;' -U postgres
-  - psql -c 'GRANT ALL PRIVILEGES ON DATABASE techprobono_test TO techprobono;' -U postgres
+  - psql -c 'create database techprobono_test;' -U postgres
