@@ -1,6 +1,15 @@
 nguage: ruby
 rvm:
-  - 2.0.0
-  - 1.9.3
+- 2.0.0
+- 1.9.3
 before_script:
-  - psql -c 'create database techprobono_test;' -U postgres
+- psql -c 'create database techprobono_test;' -U postgres
+deploy:
+  provider: openshift
+  user: spacehulk@techprobono.org
+  password:
+    secure: D/kSC5MWvA93kRiLQg6Jp78GaLS7+iM7np03AQyDGOtWkRFnMJhtytJE8iykhMdhZR75q5yR9l33lYRq/IVhW0xoZbZWq3diXPzpPNZpDdEg0u7aEIqCukmaVqZHH6pgW+wV/MpZ2j2gKz5tHUzWNK+5DGusLKUBxGV47inUqMg=
+  app: web
+  domain: techprobono
+  on:
+    repo: techprobono/techprobono.org
