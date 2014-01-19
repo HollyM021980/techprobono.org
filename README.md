@@ -1,7 +1,5 @@
 [![Build
-Status](https://travis-ci.org/techprobono/techprobono.org.png?branch=master)](https://travis-ci.org/techprobono/techprobono.org)
-
-[![Code
+Status](https://travis-ci.org/techprobono/techprobono.org.png?branch=master)](https://travis-ci.org/techprobono/techprobono.org)   [![Code
 Climate](https://codeclimate.com/github/techprobono/techprobono.org.png)](https://codeclimate.com/github/techprobono/techprobono.org)
 
 techprobono
