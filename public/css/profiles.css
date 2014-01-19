@@ -85,22 +85,24 @@ h1 {
     color: rgb(41, 41, 41);
 }
 
-#main article dt {
+#projects article dt {
     line-height: 2rem;
     color: rgb(26, 145, 137);
     display: inline;
 }
 
-#main article dd {
-    line-height: 2rem;
-    padding:0.3rem 1.2rem;
+#projects article dd {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 0.3rem 1rem;
     display: inline-block;
     color: white;
-    background-color: rgb(164, 161, 163);
-    border-width: 3px 0 0 1px;
+    background-color: rgb(177, 177, 177);
+    border-width: 2px 0 0 1px;
     border-style: solid;
     border-color: rgb(140, 140, 140);
     border-radius: 2px;
+    margin: 0 0.1rem;
 }
 
 .previous_projects h1 {

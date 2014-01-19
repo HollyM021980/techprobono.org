@@ -14,10 +14,11 @@ html, body, div, section {
 }
 
 body {
-    background-color: #456789
+    background-color: #456789;
+    height: 100%;
 }
 
-h1, h2, h3, button, p, a, caption, label, submit, textarea, span {
+h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt{
     color: #585352;
     font-family: "PT Sans Narrow";
     font-size: 1.5rem;
@@ -30,7 +31,7 @@ h1, h2, h3, button, p, a, caption, label, submit, textarea, span {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: -18px;
+    top: -16px;
     letter-spacing: -6px;
 }
 
