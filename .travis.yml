@@ -10,6 +10,6 @@ deploy:
   password:
     secure: D/kSC5MWvA93kRiLQg6Jp78GaLS7+iM7np03AQyDGOtWkRFnMJhtytJE8iykhMdhZR75q5yR9l33lYRq/IVhW0xoZbZWq3diXPzpPNZpDdEg0u7aEIqCukmaVqZHH6pgW+wV/MpZ2j2gKz5tHUzWNK+5DGusLKUBxGV47inUqMg=
   app: web
-  domain: web-techprobono.rhcloud.com
+  domain: techprobono
   on:
     repo: techprobono/techprobono.org
