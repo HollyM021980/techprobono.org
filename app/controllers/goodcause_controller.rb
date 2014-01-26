@@ -21,7 +21,8 @@ class GoodcauseController < ApplicationController
 
   def goodcause_params
     params.require(:goodcause)
-          .permit(:name, :email)
+          .permit(:name, :email,
+                  contacts_attributes: [:contact_type, :value])
   end
 
   def goodcause_repo
