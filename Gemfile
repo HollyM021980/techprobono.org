@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.0.beta1'
-
 gem 'pg'
+
+group :development do
+  gem 'pry-debugger'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'pry-rails'
-  gem 'pry-debugger'
   gem 'zeus'
 end
 
