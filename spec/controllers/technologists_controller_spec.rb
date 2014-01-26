@@ -10,9 +10,12 @@ describe TechnologistsController do
   end
 
   describe "POST 'create'" do
+    let(:technologist){ FactoryGirl.attributes_for(:user) }
+
     it "returns http success" do
-      post :create, format: :json, user: {name: 'Tech'}
-      expect(response).to be_success
+      expect {
+       post :create, format: :json, technolgoist: technologist
+      }.to change(User, :count).by(1)
     end
   end
 
