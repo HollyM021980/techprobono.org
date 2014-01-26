@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
     TECHNOLOGIST=0
   end
 
+  has_many :contacts, as: :contactable
+
 end
