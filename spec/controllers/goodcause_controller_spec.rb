@@ -10,9 +10,12 @@ describe GoodcauseController do
   end
 
   describe "POST 'create'" do
-    it "returns http success" do
-      post 'create',format: 'json', goodcause: {}
-      expect(response).to be_success
+    let(:goodcause){ FactoryGirl.attributes_for(:organisation) }
+
+    it "creates goodcause" do
+      expect {
+       post :create, format: :json, goodcause: goodcause
+      }.to change(Organisation, :count).by(1)
     end
   end
 

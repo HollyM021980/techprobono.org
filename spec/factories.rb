@@ -13,4 +13,10 @@ FactoryGirl.define do
     value        'techprobono'
   end
 
+  factory :organisation do
+    sequence(:name){|n| "Good Cause#{n}"}
+    sequence(:email){|n| "email#{n}@goodcause.com"}
+    association :contacts, factory: :contact
+  end
+
 end
