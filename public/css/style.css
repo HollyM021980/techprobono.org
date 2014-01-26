@@ -5,6 +5,7 @@
 html {
     font-size: 91%;
     height: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
 html, body, div, section {
@@ -21,7 +22,7 @@ body {
 h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt{
     color: #585352;
     font-family: "PT Sans Narrow";
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .tpb {
@@ -73,6 +74,7 @@ input {
     height: auto;
     min-height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .submitForm {
@@ -219,4 +221,100 @@ input {
     padding-right: 35px;
     margin-right: 8px;
     background: url(../img/icons/hanks.png) no-repeat center right;
+}
+
+/*
+technology list
+*/
+
+.techlist dt {
+    line-height: 2rem;
+    color: rgb(26, 145, 137);
+    display: inline;
+}
+
+.techlist dd {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 0.3rem 1rem;
+    display: inline-block;
+    color: white;
+    background-color: rgb(177, 177, 177);
+    border-width: 2px 0 0 1px;
+    border-style: solid;
+    border-color: rgb(140, 140, 140);
+    border-radius: 2px;
+    margin: 0 0.1rem 0.8rem;
+}
+
+
+/*
+button label developer / project / good cause lanyards
+*/
+
+#good_cause_button,
+#tech_button {
+    padding-left: 32px;
+    height: 118px;
+    width: 288px;
+    border: 0;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+#good_cause_button {
+    background: url(../img/cause_button.png) no-repeat 0 0 transparent;
+    padding-right: 32px;
+}
+
+#tech_button {
+    background: url(../img/tech_button.png) no-repeat 0 0 transparent;
+    z-index: 10;
+}
+
+#good_cause_button,
+#tech_button,
+#good_cause_button p,
+#tech_button p {
+    font-size: 2.4rem;
+    color: white;
+    margin: 22px;
+}
+
+#good_cause_button span,
+#tech_button span {
+    display: block;
+    font-size: 1.6rem;
+    color: white;
+    text-transform: none;
+    font-weight: 100;
+}
+
+/*
+footer
+*/
+footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 67px;
+    padding: 4px;
+    left: 0;
+    margin-bottom: 3rem;
+    clear: both;
+    position: relative;
+    top: 8rem;
+}
+
+footer .tpb {
+    font-family: "PT Sans Narrow";
+    font-size: 48px;
+    color: white;
+    position: absolute;
+    top: -12px;
+    letter-spacing: 0px;
+    margin: 15px;
 }
