@@ -21,7 +21,8 @@ class TechnologistsController < ApplicationController
 
   def technologist_params
     params.require(:technologist)
-          .permit(:name, :email, :professional_headline)
+          .permit(:name, :email, :professional_headline,
+                  contacts_attributes: [:contact_type, :value])
   end
 
   def technologist_repo

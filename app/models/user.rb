@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   end
 
   has_many :contacts, as: :contactable
+  accepts_nested_attributes_for :contacts
 
 end

@@ -5,7 +5,7 @@ FactoryGirl.define do
     sequence(:email){|n| "email#{n}@factory.com"}
     professional_headline "Backend Developer"
     account_type User::AccountType::TECHNOLOGIST
-    association :contacts
+    association :contacts, factory: :contact
   end
 
   factory :contact do
