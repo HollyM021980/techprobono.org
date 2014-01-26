@@ -1,15 +1,11 @@
 FactoryGirl.define do
 
   factory :user do
-    sequence :name do
-     name "User#{n}"
-    end
-    sequence :email do |n|
-      "email#{n}@factory.com"
-    end
+    sequence(:name){|n| "User#{n}"}
+    sequence(:email){|n| "email#{n}@factory.com"}
     professional_headline "Backend Developer"
     account_type User::AccountType::TECHNOLOGIST
-    contacts
+    association :contacts
   end
 
   factory :contact do
