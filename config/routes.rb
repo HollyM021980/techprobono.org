@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get "goodcause/:id" => "goodcause#show"
+  post "goodcause/create"
+
   get "technologists/:id" => "technologists#show"
   post "technologists/create"
 
