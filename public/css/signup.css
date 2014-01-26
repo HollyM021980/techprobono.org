@@ -62,38 +62,9 @@ input {
     padding-right: 34px;
 }
 
-#header button {
-    height: 118px;
-    width: 288px;
-    border: 0; margin: 0; padding: 0;
-    opacity: 0.9;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
-}
-
-#header button span {
-    display: block;
-    font-size: 1.6rem;
-    color: white;
-    text-transform: none;
-    font-weight: 100;
-}
-
-#header #good_cause_button {
-    background: url(../img/cause_button.png) no-repeat 0 0 transparent;
-    padding-right: 32px;
-    z-index: 12;
-}
-
-#header #tech_button {
-    position: relative;
+#tech_button {
     left: -45px;
-    background: url(../img/tech_button.png) no-repeat 0 0 transparent;
-    padding-left: 32px;
-    z-index: 10;
+    position: relative;
 }
 
 #fortech, #forgood {
