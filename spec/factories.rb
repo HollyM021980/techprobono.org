@@ -13,8 +13,8 @@ FactoryGirl.define do
   end
 
   factory :contact do
-    type 'github'
-    value 'techprobono'
+    contact_type 'github'
+    value        'techprobono'
   end
 
 end
