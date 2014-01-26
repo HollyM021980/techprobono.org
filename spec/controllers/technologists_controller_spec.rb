@@ -14,7 +14,7 @@ describe TechnologistsController do
 
     it "returns http success" do
       expect {
-       post :create, format: :json, technolgoist: technologist
+       post :create, format: :json, technologist: technologist
       }.to change(User, :count).by(1)
     end
   end
