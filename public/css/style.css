@@ -73,7 +73,7 @@ input {
     background: white;
     height: auto;
     min-height: 100%;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 }
 
@@ -297,6 +297,7 @@ button label developer / project / good cause lanyards
 footer
 */
 footer {
+    font-family: "PT Sans Narrow";
     background-color: black;
     color: white;
     width: 100%;
@@ -306,15 +307,33 @@ footer {
     margin-bottom: 3rem;
     clear: both;
     position: relative;
-    top: 8rem;
+    margin-top: 8rem;
 }
 
 footer .tpb {
-    font-family: "PT Sans Narrow";
     font-size: 48px;
     color: white;
-    position: absolute;
-    top: -12px;
+    top: 3px;
     letter-spacing: 0px;
-    margin: 15px;
+    margin: 0px;
+    border-right: 1px white solid;
+    padding: 0 1.5rem 0 0;
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    left: 30px
+}
+
+footer .msan {
+    font-size: 19px;
+    color: white;
+    width: 141px;
+    height: 100%;
+    padding-left: 1.5rem;
+    position: relative;
+    position: absolute;
+    display: inline-block;
+    left: 287px;
+    line-height: 1.1;
+    top: 13px;
 }
