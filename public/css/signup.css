@@ -29,14 +29,7 @@ button {
     margin: 2rem 0 !important;
 }
 
-input {
-    display: inline-block;
-    clear: right;
-    border: 1px solid #ccc;
-    border-top: 2px;
-    padding: 8px;
-    font-size: 1.6rem;
-}
+
 /**
  holding page info stuff
 **/
@@ -94,6 +87,10 @@ input {
 
 #fortech p {
     color: white;
+}
+
+#skills {
+    height:
 }
 
 #thanks {

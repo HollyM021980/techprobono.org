@@ -19,7 +19,7 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt{
+h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt, ul, li {
     color: #585352;
     font-family: "PT Sans Narrow";
     font-size: 1.3rem;
@@ -61,9 +61,6 @@ label:after {
 }
 
 input {
-    border: 0;
-    padding: 7px;
-    outline: none;
 }
 
 .main {
@@ -145,7 +142,22 @@ input {
     left: -12px;
 }
 
+input {
+    display: inline-block;
+    clear: right;
+    border: 1px solid #ccc;
+    border-top: 2px;
+    padding: 8px;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+}
+
 #search_string {
+    border: 0;
+    border-top: 0;
+    padding: 2px;
+    line-height: 1rem;
+    outline: none;
     width: 162px;
 }
 
@@ -227,13 +239,14 @@ input {
 technology list
 */
 
-.techlist dt {
+.techlist {
     line-height: 2rem;
     color: rgb(26, 145, 137);
     display: inline;
+    list-style-type: none;
 }
 
-.techlist dd {
+.techlist li {
     font-size: 1.2rem;
     line-height: 1.6rem;
     padding: 0.3rem 1rem;
@@ -247,6 +260,27 @@ technology list
     margin: 0 0.1rem 0.8rem;
 }
 
+
+
+ul.captioned {
+    position: relative;
+    left: 135px;
+    overflow: visible;
+    width: 85%;;
+    display: block;
+    -webkit-padding-start: 0px;
+}
+
+ul.captioned[title]:before {
+    content: attr(title) ": ";
+    position: absolute;
+    top: 0; left: -135px;
+    width: 135px;
+    display: block;
+}
+
+
+.addanother { font-style: italic }
 
 /*
 button label developer / project / good cause lanyards

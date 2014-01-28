@@ -31,6 +31,13 @@ nav bar and external links
     background: url(../img/profilepic.png);
 }
 
+#profile_pic.hanks {
+    height: 230px;
+    width: 206px;
+    display: inline-block;
+    background: url(../img/hanks.png);
+}
+
 h1 {
     font-family: Tahoma;
     color: rgb(46, 165, 159);
@@ -67,7 +74,6 @@ h1 {
 .linkedin { background: url(../img/icons/linkedin.png) no-repeat 0 center; }
 .lanyrd { background: url(../img/icons/lanyrd.png) no-repeat 0 center; }
 .github { background: url(../img/icons/github.png) no-repeat 0 center; }
-#external_details .addanother { font-style: italic }
 
 /**
 info and details
@@ -84,8 +90,8 @@ info and details
  project boxes
 **/
 .current_projects article {
-    border: 1px solid #aaa;
-    border-width: 0 2px 3px 0;
+    border: 1px inset #aaa;
+    border-width: 0 1px 2px 0;
     background-color: white;
 }
 .current_projects  h1 {
