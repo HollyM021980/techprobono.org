@@ -36,6 +36,12 @@ h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt, ul, li
     letter-spacing: -6px;
 }
 
+.addmore {
+    font-style: italic;
+    cursor: pointer;
+}
+
+
 form {
     display: block;
     width: 780px;
@@ -54,13 +60,31 @@ label {
     clear: left;
     padding-left: 12rem;
     width: 24rem;
+    text-align: left;
+    vertical-align: top;
+    padding-top: 14px;
 }
 
 label:after {
     content: ':';
 }
 
-input {
+input, textarea, #skillslist {
+    display: inline-block;
+    clear: right;
+    border: 1px solid #ccc;
+    border-top: 2px;
+    padding: 8px;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    width: 260px;
+    margin-top: 2px;
+    background-color: white;
+}
+
+textarea {
+    width: 360px;
+    margin-top: 2px;
 }
 
 .main {
@@ -140,16 +164,6 @@ input {
     position: relative;
     top: 12px;
     left: -12px;
-}
-
-input {
-    display: inline-block;
-    clear: right;
-    border: 1px solid #ccc;
-    border-top: 2px;
-    padding: 8px;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
 }
 
 #search_string {
@@ -246,7 +260,7 @@ technology list
     list-style-type: none;
 }
 
-.techlist li {
+.techlist li, .techlist span {
     font-size: 1.2rem;
     line-height: 1.6rem;
     padding: 0.3rem 1rem;
@@ -258,6 +272,12 @@ technology list
     border-color: rgb(140, 140, 140);
     border-radius: 2px;
     margin: 0 0.1rem 0.8rem;
+}
+
+.techlist li:not(.addmore):after, .techlist span:after {
+    content: " x";
+    color: #666;
+    padding-left: 6px;
 }
 
 

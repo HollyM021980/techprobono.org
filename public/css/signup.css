@@ -89,8 +89,17 @@ button {
     color: white;
 }
 
-#skills {
-    height:
+#skillslist {
+    height: 180px;
+    width: 420px;
+}
+
+#skillslist input {
+    border: 0;
+    font-size: 1rem;
+    font-family: "PT Sans Narrow";
+    width: 80px;
+    line-height: 1rem;
 }
 
 #thanks {
