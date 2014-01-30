@@ -274,7 +274,7 @@ technology list
     margin: 0 0.1rem 0.8rem;
 }
 
-.techlist li:not(.addmore):after, .techlist span:after {
+.techlist li.editable:after, .techlist span.editable:after {
     content: " x";
     color: #666;
     padding-left: 6px;

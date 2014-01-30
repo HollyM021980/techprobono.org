@@ -36,6 +36,36 @@ $(document).ready(function() {
         toggleForm($("#techformdiv"));
     });
 
+    var createTechListItem = function (e) {
+        var span;
+        console.log(e.keyCode);
+        if(e.keyCode && (e.keyCode === 13) && (e.target.value.length > 1)){
+            span = document.createElement("SPAN");
+            span.innerHTML = e.target.value;
+            span.id = "tech_" + e.target.value.replace(/ /g, "_#_");
+            span.className = "editable";
+            e.target.parentNode.insertBefore(span, e.target);
+            e.target.placeholder = "add more skills";
+            e.target.value = "";
+        }
+    };
+    $('#skillslist').click(function(e) {
+        var elementID = "";
+        if(e.target.tagName.toUpperCase() === "SPAN"){
+            elementID = "tech_" + e.target.innerHTML.replace(/ /g, "_#_");
+            $("#" + elementID).remove();
+        }
+    });
+
+    $('#skillslist input').keyup(function(e){
+        e.preventDefault();
+        createTechListItem(e);
+    });
+    $('#skillslist input').blur(function(e){
+        e.preventDefault();
+        createTechListItem(e);
+    });
+
     $("#submitgoodcause").click(function(event) {
         event.preventDefault();
         var inputs = $('#goodcauseform input');
@@ -74,8 +104,8 @@ $(document).ready(function() {
         event.preventDefault();
         var inputs = $('#techform input');
         var serialised = [];
-        if ($("#gihub")[0].value && $("#gihub")[0].value.indexOf("//") !== -1){
-            $("#gihub")[0].value = $("#gihub")[0].value.split("//")[1];
+        if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
+            $("#github")[0].value = $("#github")[0].value.split("//")[1];
         }
         inputs.each(function(i){
             serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));

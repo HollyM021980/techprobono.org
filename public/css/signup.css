@@ -98,8 +98,12 @@ button {
     border: 0;
     font-size: 1rem;
     font-family: "PT Sans Narrow";
-    width: 80px;
+    width: 104px;
     line-height: 1rem;
+}
+
+#skillslist input:focus {
+    outline: 0;
 }
 
 #thanks {
