@@ -57,7 +57,7 @@
         <div class="msan">matching skills and needs</div>
     </footer>
     </div>
-    <div id="addContact" class="module modal">
+    <div id="addContact" class="module modal hidden">
         <h1>add contact details</h1>
         <div>
             <label for="location" class="location"><span>New York, USA</span></label>
@@ -68,6 +68,42 @@
             <label for="linkedin" class="linkedin addmore"><span>+ add contact</span></label>
             <label for="lanyrd" class="lanyrd addmore"><span>+ add contact</span></label>
             <label for="github" class="github addmore"><span>+ add contact</span></label>
+        </div>
+    </div>
+
+    <div id="addDescription" class="module modal">
+        <h1>tell us about yourself</h1>
+        <textarea id="descriptionModal" placeholder="write as much as you like! You can use markdown"></textarea>
+        <div id="addDescriptionSlideout" class="modalslideout">
+            <h1>markdown cheat sheet</h1>
+            <pre>Heading
+=======
+
+Sub-heading
+-----------
+
+Paragraphs are separated
+by a blank line.
+
+Text attributes
+*italic*,
+**bold**,
+`monospace`.
+
+[link](http://example.com).
+
+Shopping list:
+
+  * apples
+  * oranges
+  * pears
+
+Numbered list:
+
+  1. apples
+  2. oranges
+  3. pears
+          </pre>
         </div>
     </div>
 </body>

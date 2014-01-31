@@ -84,9 +84,29 @@ info and details
     margin: 0
 }
 
-#category_cloud {
-
+#addContact div {
+    margin: 12px 18px;
 }
+
+#addDescription {
+    width: 720px;
+    margin-left: -300px;
+}
+
+#addDescription textarea {
+    width: 59%;
+    border: 1px solid  rgb(46, 165, 159);
+    margin: 25px 18px 18px 18px;
+    background-color: whitesmoke;
+    height: 340px;
+    display: inline-block;
+}
+
+.modalslideout pre {
+    padding: 12px 18px;
+}
+
+
 /**
  project boxes
 **/

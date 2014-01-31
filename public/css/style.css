@@ -19,7 +19,7 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt, ul, li {
+h1, h2, h3, button, p, a, caption, label, submit, textarea, input, span, dd, dt, ul, li {
     color: #585352;
     font-family: "PT Sans Narrow";
     font-size: 1.3rem;
@@ -34,6 +34,14 @@ h1, h2, h3, button, p, a, caption, label, submit, textarea, span, dd, dt, ul, li
     position: absolute;
     top: -16px;
     letter-spacing: -6px;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
 }
 
 .addmore {
@@ -287,7 +295,7 @@ module formatting
 }
 
 .modal > div {
-    padding: 12px 18px;
+/*    padding: 12px 18px;   */
 }
 
 .module h1 {
@@ -306,6 +314,26 @@ module formatting
 
 .module article {
     padding-left: 1rem;
+}
+
+
+.modalslideout {
+    border-radius: 0 4px 4px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: white;
+    border: 1px solid rgb(46,165,159);
+    height: 338px;
+    width: 33%;
+    background: white;
+    display: inline-block;
+    border-width: 1px;
+    vertical-align: top;
+    margin: 25px 0 18px;
+}
+
+.modalslideout h1 {
+    font-size: 1rem;
 }
 
 /*
