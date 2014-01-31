@@ -84,7 +84,7 @@ info and details
     margin: 0
 }
 
-#addContact div {
+#addContact div, #addHeadline div {
     margin: 12px 18px;
 }
 
@@ -104,6 +104,11 @@ info and details
 
 .modalslideout pre {
     padding: 12px 18px;
+}
+
+#addHeadline input {
+    border-top: 1px solid #ccc;
+    width: 347px;
 }
 
 
