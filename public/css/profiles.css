@@ -75,6 +75,7 @@ h1 {
 .lanyrd { background: url(../img/icons/lanyrd.png) no-repeat 0 center; }
 .github { background: url(../img/icons/github.png) no-repeat 0 center; }
 
+
 /**
 info and details
 **/
@@ -93,12 +94,6 @@ info and details
     border: 1px inset #aaa;
     border-width: 0 1px 2px 0;
     background-color: white;
-}
-.current_projects  h1 {
-    font-size: 1.5rem;
-    background-color: rgb(46, 165, 159);
-    color: white;
-    padding: 1rem;
 }
 
 .current_projects  h2 {

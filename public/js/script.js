@@ -53,7 +53,7 @@ $(document).ready(function() {
         var elementID = "";
         if(e.target.tagName.toUpperCase() === "SPAN"){
             elementID = "tech_" + e.target.innerHTML.replace(/ /g, "_#_");
-            $("#" + elementID).remove();
+            $("[id="+ elementID +"]").remove();
         }
     });
 
@@ -102,16 +102,25 @@ $(document).ready(function() {
 
     $("#submitech").click(function(event) {
         event.preventDefault();
+        var skills = [];
         var inputs = $('#techform input');
+        $('#skillslist span').each(function(i, obj){
+            skills.push(obj.innerHTML);
+            console.log(obj.innerHTML)
+            console.log(skills)
+        })
+        $('#skills').val(skills.join(","));
         var serialised = [];
+
         if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
             $("#github")[0].value = $("#github")[0].value.split("//")[1];
         }
         inputs.each(function(i){
             serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
         });
-        var query = serialised.join("&");
 
+        var query = serialised.join("&");
+        console.log(query);
         $.ajax({
             type: "POST",
             url: "php/submittech.php",
