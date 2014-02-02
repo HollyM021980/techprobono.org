@@ -484,6 +484,7 @@ button.facebook, button.twitter, button.github, button.emailsignup {
     width: 100%;
     font-size: 24px;
 	margin-top: 15px;
+	padding: 6px;
 }
 
 button.facebook,
