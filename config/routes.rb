@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "home/index"
+
   get "goodcause/:id" => "goodcause#show"
   post "goodcause/create"
 
