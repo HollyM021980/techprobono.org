@@ -4,7 +4,8 @@ describe TechnologistsController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get :show, format: 'json', id: 1
+      tech = FactoryGirl.create(:user, contacts: [])
+      get :show, format: 'json', id: tech.id
       expect(response).to be_success
     end
   end
