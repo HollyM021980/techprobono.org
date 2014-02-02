@@ -5,6 +5,7 @@ gem 'pg'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc',          group: :doc, require: false
 gem 'thin'
+gem 'rack-timeout'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
