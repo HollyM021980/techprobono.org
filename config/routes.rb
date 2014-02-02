@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "goodcause/:id" => "goodcause#show"
   post "goodcause/create"
 
-  get "technologists/:id" => "technologists#show"
+  get "technologists/:id" => "technologists#show", as: 'technologist'
   post "technologists/create"
 
   # The priority is based upon order of creation: first created -> highest priority.
