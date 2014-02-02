@@ -19,14 +19,10 @@ describe TechnologistsController do
     end
 
     context "technologist with contacts" do
-      let(:github) { FactoryGirl.attributes_for(:contact) }
-
-      let(:stackoverflow) do
-        FactoryGirl.attributes_for(:contact, contact_type: 'stackoverflow')
-      end
 
       let(:technologist_with_contacts) do
-        technologist.merge(:contacts_attributes => [github, stackoverflow])
+        contacts = { github: "techprobono", stackoverflow: "techprobono" }
+        technologist.merge(:contacts_attributes => contacts)
       end
 
 

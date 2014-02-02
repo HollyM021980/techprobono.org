@@ -28,7 +28,7 @@ class TechnologistsController < ApplicationController
   end
 
   def format_contacts(params)
-    contacts = params[:technologist][:contacts_attributes]
+    contacts = params[:technologist][:contacts_attributes] || []
     contacts = contacts.map do |k,v|
       {
         contact_type: k,
