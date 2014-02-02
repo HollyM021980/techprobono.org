@@ -77,7 +77,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "php/submitgoodcause.php",
+            url: "/goodcause",
             data: query,
             success: function(json){
                 $('#progress').slideDown();
@@ -123,7 +123,7 @@ $(document).ready(function() {
         console.log(query);
         $.ajax({
             type: "POST",
-            url: "php/submittech.php",
+            url: "technologists/create",
             data: query,
             success: function(json){
                 $('#progress').slideDown();
