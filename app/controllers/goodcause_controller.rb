@@ -1,5 +1,5 @@
 class GoodcauseController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def show
     respond_with('OK')
