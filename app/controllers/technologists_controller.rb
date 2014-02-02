@@ -1,8 +1,9 @@
 class TechnologistsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
+  layout 'technologist'
 
   def show
-    respond_with('OK')
+    respond_with(User.find(params[:id]))
   end
 
   def create
@@ -10,6 +11,7 @@ class TechnologistsController < ApplicationController
     respond_to do |format|
       if tech
         format.json { render json: tech, status: :created }
+        format.html { redirect_to technologist_path(tech) }
       else
         format.json { render json: tech.errors,
                            status: :unprocessable_entity }
@@ -20,9 +22,22 @@ class TechnologistsController < ApplicationController
   private
 
   def technologist_params
-    params.require(:technologist)
-          .permit(:name, :email, :professional_headline,
-                  contacts_attributes: [:contact_type, :value])
+    tech = format_contacts(params.dup)
+    tech.require(:technologist)
+        .permit(:name, :email, :professional_headline,
+                contacts_attributes: [:contact_type, :value])
+  end
+
+  def format_contacts(params)
+    contacts = params[:technologist][:contacts_attributes] || []
+    contacts = contacts.map do |k,v|
+      {
+        contact_type: k,
+        value: v
+      }
+    end
+    params[:technologist][:contacts_attributes] = contacts
+    params
   end
 
   def technologist_repo

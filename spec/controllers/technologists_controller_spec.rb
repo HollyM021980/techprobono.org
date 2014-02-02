@@ -4,7 +4,8 @@ describe TechnologistsController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get :show, format: 'json', id: 1
+      tech = FactoryGirl.create(:user, contacts: [])
+      get :show, format: 'json', id: tech.id
       expect(response).to be_success
     end
   end
@@ -19,14 +20,10 @@ describe TechnologistsController do
     end
 
     context "technologist with contacts" do
-      let(:github) { FactoryGirl.attributes_for(:contact) }
-
-      let(:stackoverflow) do
-        FactoryGirl.attributes_for(:contact, contact_type: 'stackoverflow')
-      end
 
       let(:technologist_with_contacts) do
-        technologist.merge(:contacts_attributes => [github, stackoverflow])
+        contacts = { github: "techprobono", stackoverflow: "techprobono" }
+        technologist.merge(:contacts_attributes => contacts)
       end
 
 
