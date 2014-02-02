@@ -83,7 +83,7 @@ info and details
     margin: 0
 }
 
-#addContact div, #addHeadline div {
+#addContact div, #addHeadline div, #completeSignup > div {
     margin: 12px 18px;
 }
 
@@ -110,7 +110,25 @@ info and details
     width: 347px;
 }
 
+#signupwithemail {
+    margin: 18px 0;
+    display: none;
+}
 
+label[for="password"] {
+    float: left;
+    width: 25%;
+    padding-left: 0px;
+}
+label[for="password"]:before {
+    left: 0px;
+    top: 0.8rem;
+}
+#password {
+    float: left;
+    width: 75%;
+    border-top: 1px solid #ccc
+}
 /**
  project boxes
 **/
