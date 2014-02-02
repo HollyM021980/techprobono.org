@@ -25,11 +25,21 @@ $(document).ready(function() {
 
 });
 
+var isDescendant = function (parent, child) {
+    var node = child;
+    while (node != null) {
+        if (node == parent) {
+            return true;
+        }
+        node = node.parentNode;
+    }
+    return false;
+};
 
 	var windowClick = function(e) {
         var el = e.target;
         e.preventDefault();
-        if(el != triggerElement && !core.isDescendant($("calendar"), el)) {
+        if(!core.isDescendant($("calendar"), el)) {
             if(isOpen) {
                 hideCalendar();
             }
