@@ -3,7 +3,7 @@ class TechnologistsController < ApplicationController
   layout 'technologist'
 
   def show
-    respond_with(User.find(params[:id]))
+    respond_with(technologist_repo.find(params[:id]))
   end
 
   def create
