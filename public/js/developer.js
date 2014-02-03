@@ -25,18 +25,15 @@ $(document).ready(function() {
     var openModal = function(modal) {
         closeModals();
         $('#' + modal).removeClass("hidden");
-        window.addEventListener("click", (function windowClickDetector(e) {
-            console.log(e.target);
-            debugger;
-            if(e.target === $('#' + modal).get() || isDescendant($('#' + modal).get(), e.target)) {
+        window.addEventListener("click", function windowClickDetector(e) {
+            if(e.target.className.indexOf("addmore") != -1 || e.target === $('#' + modal).get()[0] || isDescendant($('#' + modal).get()[0], e.target)) {
                 return
             } else {
-                if(!modal){
-                    closeModals();
-                    window.removeEventListener("click", windowClickDetector, false);
-                }
+                window.removeEventListener("click", windowClickDetector, false);
+                $('#' + modal).addClass("hidden");
+
             }
-        }), false)
+        }, false);
     };
 
     $("#signupwithemail").slideUp();
@@ -47,6 +44,7 @@ $(document).ready(function() {
     });
 
     $("#external_details .addmore").click(function() {
+        console.log("add details")
         openModal("addContact");
     });
 
@@ -58,11 +56,10 @@ $(document).ready(function() {
         openModal("addHeadline");
     });
 
-    openModal("completeSignup");
+   // openModal("completeSignup");
 
     $('#external_details .addmore').click(function(e){
         e.preventDefault();
-        createTechListItem(e);
     });
 
 });
