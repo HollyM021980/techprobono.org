@@ -37,6 +37,12 @@ nav bar and external links
     background: url(../img/hanks.png);
 }
 
+#fileupload {
+    width: 206px;
+    height: 228px;
+    opacity: 0;
+}
+
 h1 {
     font-family: Tahoma;
     color: rgb(46, 165, 159);
