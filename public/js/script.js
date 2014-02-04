@@ -98,6 +98,12 @@ $(document).ready(function() {
         });
     });
 
+
+/* andrei! Please don't multiline comment like this. Just do a /* at the start and an * / at the very end
+    putting each line on a / /  is specific to your Text editor / IDE. Makes it a pain in the butt for
+    people on a different one!
+    Thank you! */
+
 /*    $("#submitech").click(function(event) {*/
         //event.preventDefault();
         //var skills = [];

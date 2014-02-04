@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     // $('window').unbind("click");
 
-    var closeModals = function(){
+    var closeModals = function() {
         $(".modal").addClass("hidden");
     };
 
@@ -36,9 +36,38 @@ $(document).ready(function() {
         }, false);
     };
 
+    $("#addContact span").focus(function(e) {
+        var node = e.target;
+        if(node.innerHTML.indexOf("add contact") != -1){
+            node.innerHTML = "";
+        }
+    });
+
+
+    $("#addContact span").keyup(function(e) {
+        var node = e.target,
+            params;
+        node.style.fontStyle = "normal";
+        if (e.keyCode === 13 || e.keyCode === 10) {
+            params = node.className + "+" + node.innerHTML;
+            $.ajax({
+                type: "POST",
+                url: "developer/network",
+                data: params,
+                success: function(json) {
+                    core.flash(node);
+                },
+                error: function() {
+                    node.innerHTML = "+ add contact";
+                    node.style.fontStyle = "italic";
+                }
+            });
+        }
+    });
+
     $("#signupwithemail").slideUp();
 
-    $("#emailsignup").click(function(){
+    $("#emailsignup").click(function() {
         $('#emailsignup').slideUp();
         $("#signupwithemail").slideDown();
     });
@@ -58,7 +87,7 @@ $(document).ready(function() {
 
    // openModal("completeSignup");
 
-    $('#external_details .addmore').click(function(e){
+    $('#external_details .addmore').click(function(e) {
         e.preventDefault();
     });
 
