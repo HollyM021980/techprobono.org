@@ -4,9 +4,9 @@ module HomeHelper
 
   def technologist
     @technologist = tech_repo.create_empty
-    @technologist.contacts.push(contact("twitter", "Twitter name:"),
-                                contact("github", "Github:"),
-                                contact("website", "Website / portfolio:"))
+    @technologist.contacts.push(contact("twitter", "Twitter name"),
+                                contact("github", "Github"),
+                                contact("website", "Website / portfolio"))
     @technologist
   end
 
