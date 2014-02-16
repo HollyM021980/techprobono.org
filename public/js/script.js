@@ -111,9 +111,10 @@ $(document).ready(function() {
         })
         $('#skills').val(skills.join(","));
         var serialised = [];
-
-        if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
-            $("#github")[0].value = $("#github")[0].value.split("//")[1];
+        if ($("#github")) {
+            if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
+                $("#github")[0].value = $("#github")[0].value.split("//")[1];
+            }
         }
         inputs.each(function(i){
             serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
