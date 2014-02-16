@@ -34,7 +34,7 @@
                 <button class="submitForm"  name="" id="revealTechform">sign me up</button>
             </div>
             <div class="form" id="techformdiv">
-              <form id="techform">
+              <%= form_for(:technologist, id:"techform") do %>
                   <div id="progress">
                     <p>We are right at the start of this project, but good to go. Sign up here to register as a tech who wants to go pro bono</p>
                     <label for="twitter">Twitter name</label>
@@ -63,7 +63,7 @@
                 <p>Designers! Why not upload sketches, designs or improve or comment on other people's contributions?</p>
 
                 <a class="closeSection"  name="closetech" id="closetech">Close this</a>
-            </form>
+              <% end %>
             </div>
         </section>
         <section>
