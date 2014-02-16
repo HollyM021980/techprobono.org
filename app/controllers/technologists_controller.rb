@@ -23,7 +23,7 @@ class TechnologistsController < ApplicationController
 
   def technologist_params
     params.require(:technologist)
-          .permit(:name, :email, :professional_headline,
+          .permit(:name, :email, :professional_headline, :skills,
                   contacts_attributes: [:contact_type, :value])
   end
 
