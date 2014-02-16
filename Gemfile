@@ -7,7 +7,8 @@ gem 'sdoc',          group: :doc, require: false
 gem 'thin'
 gem 'rack-timeout'
 gem 'acts-as-taggable-on'
-gem 'omniauth-github', git: 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-twitter'
+gem 'omniauth'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

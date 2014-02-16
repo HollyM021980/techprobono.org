@@ -33,6 +33,6 @@ module Techprobono
       generate.assets false
       generate.view_specs false
     end
-
+    OmniAuth.config.logger = Rails.logger
   end
 end
