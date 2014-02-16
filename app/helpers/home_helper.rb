@@ -1,5 +1,4 @@
 # Why? Because Rails has form helpers for objects
-
 module HomeHelper
 
   def technologist
