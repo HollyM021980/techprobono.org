@@ -102,29 +102,23 @@ $(document).ready(function() {
         });
     });
 
+    $("#submitech").click(function(event) {
+        event.preventDefault();
+        var skills = [];
+        var inputs = $('#techform input');
+        $('#skillslist span').each(function(i, obj){
+            skills.push(obj.innerHTML);
+        })
+        $('#skills').val(skills.join(","));
+        var serialised = [];
 
-/* andrei! Please don't multiline comment like this. Just do a /* at the start and an * / at the very end
-    putting each line on a / /  is specific to your Text editor / IDE. Makes it a pain in the butt for
-    people on a different one!
-    Thank you! */
+        if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
+            $("#github")[0].value = $("#github")[0].value.split("//")[1];
+        }
+        inputs.each(function(i){
+            serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
+        });
 
-/*    $("#submitech").click(function(event) {*/
-        //event.preventDefault();
-        //var skills = [];
-        //var inputs = $('#techform input');
-        //$('#skillslist span').each(function(i, obj){
-            //skills.push(obj.innerHTML);
-        //})
-        //$('#skills').val(skills.join(","));
-        //var serialised = [];
-
-        //if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
-            //$("#github")[0].value = $("#github")[0].value.split("//")[1];
-        //}
-        //inputs.each(function(i){
-            //serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
-        //});
-
-        //var query = serialised.join("&");
-    /*});*/
+        var query = serialised.join("&");
+    });
 });
