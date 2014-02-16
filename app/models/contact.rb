@@ -5,4 +5,6 @@ class Contact < ActiveRecord::Base
   validates :contact_type, presence: true
   validates :value, presence: true
 
+  attr_accessor :label
+
 end
