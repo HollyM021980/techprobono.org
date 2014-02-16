@@ -12,6 +12,10 @@ module Repos
          account_type: ACCOUNT_TYPE)
     end
 
+    def create_empty
+      User.new(account_type)
+    end
+
     private
 
     def account_type
