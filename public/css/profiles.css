@@ -2,6 +2,10 @@
  resets
 **/
 
+body {
+    background-color: #efefef;
+}
+
 nav {
     display: inline-block;
     width: 18%;

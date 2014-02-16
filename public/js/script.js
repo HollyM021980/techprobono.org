@@ -65,6 +65,10 @@ $(document).ready(function() {
         createTechListItem(e);
     });
 
+    $('#techform').submit(function(e){
+        e.preventDefault();
+    });
+
     $("#submitgoodcause").click(function(event) {
         event.preventDefault();
         var inputs = $('#goodcauseform input');
