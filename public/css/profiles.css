@@ -20,6 +20,10 @@ nav > * {
     margin-top: 2rem
 }
 
+#projects section:first-child {
+    width: 720px;
+}
+
 /**
 nav bar and external links
 **/
