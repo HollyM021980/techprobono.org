@@ -380,6 +380,10 @@ technology list
     padding-left: 6px;
 }
 
+.techlist li.addmore.editable:after {
+    content: "";
+    padding-left: 0;
+}
 
 
 ul.captioned {

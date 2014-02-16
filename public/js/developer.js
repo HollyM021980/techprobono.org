@@ -81,6 +81,16 @@ $(document).ready(function() {
         openModal("addDescription");
     });
 
+    var addtechnologies = function() {
+        $("#techlist li").each(function() {
+            this.classList.toggle("editable");
+        });
+    }
+
+    $("#techlist .addmore").click(function() {
+        addtechnologies();
+    });
+
     $("#updateHeadline").click(function() {
         openModal("addHeadline");
     });
