@@ -7,7 +7,7 @@ class TechnologistsController < ApplicationController
   end
 
   def create
-    tech = technologist_repo.create(technologist_params)
+    tech = technologist_repo.create(params)
     respond_to do |format|
       if tech
         format.json { render json: tech, status: :created }
@@ -20,12 +20,6 @@ class TechnologistsController < ApplicationController
   end
 
   private
-
-  def technologist_params
-    params.require(:technologist)
-          .permit(:name, :email, :professional_headline, :skills,
-                  contacts_attributes: [:contact_type, :value])
-  end
 
   def technologist_repo
     Repos::Technologist.new

@@ -11,30 +11,27 @@ describe TechnologistsController do
   end
 
   describe "POST 'create'" do
-    let(:technologist){ FactoryGirl.attributes_for(:user) }
+
+    let(:technologist_attributes) do
+      [
+        twitter: "techprobono",
+        github: "techprobono",
+        email: "techprobono@email.com",
+        portfolio: "techprobono.org",
+        skills: "html,ruby"
+      ]
+    end
 
     it "creates technologist" do
       expect {
-       post :create, format: :json, technologist: technologist
+        post :create, *technologist_attributes
       }.to change(User, :count).by(1)
     end
 
-    context "technologist with contacts" do
-
-      let(:technologist_attributes) do
-        {"contacts_attributes" => { "0" => {"contact_type"=>"twitter", "value" => "techprobono"},
-                                    "1" => {"contact_type"=>"github", "value" => "techprobono"},
-                                    "2" => {"contact_type"=>"website", "value"=> "techprobono"}},
-                       "email" => "techprobono@email.com", "skills"=>"" }
-      end
-
-      it "creates technologist with contacts" do
-        expect {
-          post :create, format: :json, technologist: technologist_attributes
-        }.to change(Contact, :count).by(3)
-      end
-
-
+    it "creates technologist with contacts" do
+      expect {
+        post :create, *technologist_attributes
+      }.to change(Contact, :count).by(3)
     end
   end
 end

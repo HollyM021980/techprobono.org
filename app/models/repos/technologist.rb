@@ -4,7 +4,7 @@ module Repos
     ACCOUNT_TYPE = User::AccountType::TECHNOLOGIST
 
     def create(params)
-      User.create(create_data(params))
+      User.create(parse_params(params))
     end
 
     def find(id)
@@ -16,20 +16,33 @@ module Repos
       User.new(account_type)
     end
 
+    def parse_params(params)
+      {
+        contacts_attributes: parse_contacts(params),
+        email: params[:email],
+        skill_list: parse_skills(params),
+        account_type: ACCOUNT_TYPE
+      }
+    end
+
     private
 
-    def create_data(params)
-      data = params.merge(account_type)
-      data.delete(:skills) if !data[:skills].present?
-      if params[:contacts_attributes].present?
-        data[:contacts_attributes] = params[:contacts_attributes].map{ |_, v| v }
+    def parse_contacts(params)
+      [:twitter, :github, :portfolio].map do |c|
+        {
+          contact_type: c.to_s,
+          value: params[c]
+        }
       end
-      data
+    end
+
+    def parse_skills(params)
+      return [] if !params[:skills].present?
+      params[:skills].split(",")
     end
 
     def account_type
       { account_type: ACCOUNT_TYPE }
     end
-
   end
 end
