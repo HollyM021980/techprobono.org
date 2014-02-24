@@ -1,7 +1,7 @@
 h2 {
     color: #d6d6d6;
     text-align: center;
-    line-height: 10rem;
+    padding: 2.45rem;
     font-size: 4rem;
     text-transform: uppercase;
     margin: 0px;
@@ -79,7 +79,8 @@ button {
 }
 
 #fortech p, #forgood p {
-    width: 820px;
+    max-width: 820px;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 8px;
     text-align: justify;

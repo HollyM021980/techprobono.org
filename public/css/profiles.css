@@ -107,7 +107,8 @@ info and details
 }
 
 #addDescription textarea {
-    width: 59%;
+    width: 420px;
+    max-width: 420px;
     border: 1px solid  rgb(46, 165, 159);
     margin: 25px 18px 18px 18px;
     background-color: whitesmoke;
@@ -115,8 +116,20 @@ info and details
     display: inline-block;
 }
 
+.modalslideout {
+    margin: 25px 0 18px;
+    height: 280px;
+    width: 33%;
+}
 .modalslideout pre {
     padding: 12px 18px;
+}
+
+#submitDescription {
+    position: absolute;
+    bottom: 22px;
+    right: 13px;
+    width: 33%;
 }
 
 #addHeadline input {

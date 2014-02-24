@@ -52,9 +52,14 @@ h1, h2, h3, button, p, a, caption, label, submit, textarea, input, span, dd, dt,
 
 form {
     display: block;
-    width: 780px;
+    width: 80%;
+    max-width: 820px;
     margin: 0 auto;
     color: #585352;
+}
+
+.modal form {
+    max-width: 100%
 }
 
 .form {
@@ -67,8 +72,8 @@ label {
     display: inline-block;
     position: relative;
     clear: left;
-    padding-left: 12rem;
-    width: 24rem;
+    padding-left: 16%;
+    width: 45%;
     text-align: left;
     vertical-align: top;
     padding-top: 14px;
@@ -86,7 +91,8 @@ input, textarea, #skillslist {
     padding: 8px;
     font-size: 1.4rem;
     line-height: 2.1rem;
-    width: 260px;
+    width: 33%;
+    max-width: 275px;
     margin-top: 2px;
     background-color: white;
 }
@@ -96,8 +102,12 @@ textarea {
     margin-top: 2px;
 }
 
+.modal input, .modal textarea {
+    max-width: 100%
+}
+
 .main {
-    width: 1280px;
+    width: 90%;
     margin: 0 auto;
     color: white;
     background: white;
@@ -299,6 +309,8 @@ module formatting
 .modal label {
     padding-top: 0px;
     margin-bottom: 18px;
+    padding-left: 12rem;
+    width: 24rem;
 }
 
 .modal > div {
@@ -325,18 +337,14 @@ module formatting
 
 
 .modalslideout {
-    border-radius: 0 4px 4px 0;
     overflow-y: scroll;
     overflow-x: hidden;
     background: white;
     border: 1px solid rgb(46,165,159);
-    height: 338px;
-    width: 33%;
     background: white;
     display: inline-block;
     border-width: 1px;
     vertical-align: top;
-    margin: 25px 0 18px;
 }
 
 .modalslideout h1 {

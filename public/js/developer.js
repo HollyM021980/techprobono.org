@@ -95,6 +95,33 @@ $(document).ready(function() {
         openModal("addHeadline");
     });
 
+    $('#headline').keyup(function(e) {
+        var node = e.target,
+            params;
+        if (e.keyCode === 13 || e.keyCode === 10) {
+            params = node.className + "+" + node.innerHTML;
+            /* get rid of this when the ajax is working */
+            var head = $('#updateHeadline')[0];
+            head.style.fontStyle = "normal";
+            head.innerHTML = node.value;
+            closeModals();
+            $.ajax({
+                type: "POST",
+                url: "developer/headline",
+                data: params,
+                success: function(json) {
+                    var head = $('#updateHeadline')[0];
+                    head.style.fontStyle = "normal";
+                    head.innerHTML = node.value;
+                    closeModals();
+                },
+                error: function() {
+                    // do something here. Would be nice.
+                }
+            });
+        }
+    });
+
    // openModal("completeSignup");
 
     $('#external_details .addmore').click(function(e) {
