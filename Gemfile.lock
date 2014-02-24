@@ -31,6 +31,7 @@ GEM
       rails (>= 3, < 5)
     arel (5.0.0)
     atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
     builder (3.2.2)
     daemons (1.1.9)
     diff-lcs (1.2.5)
@@ -136,6 +137,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  bcrypt-ruby (~> 3.1.2)
   factory_girl_rails
   omniauth
   omniauth-twitter
