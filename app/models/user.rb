@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
 
   acts_as_taggable_on :skills
-  has_secure_password
 
   module AccountType
     TECHNOLOGIST=0
