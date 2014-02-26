@@ -101,6 +101,25 @@ info and details
     margin: 12px 18px;
 }
 
+#addContact input {
+    width: 100%;
+}
+
+#addContact input:not([type=submit]) {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0 0.2rem;
+    margin: 0;
+    border: 0;
+    color: #585352;
+    line-height: 1.6rem;
+}
+
+input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 0;
+}
 #addDescription {
     width: 720px;
     margin-left: -300px;

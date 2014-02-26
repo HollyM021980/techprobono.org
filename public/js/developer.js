@@ -36,12 +36,15 @@ $(document).ready(function() {
         }, false);
     };
 
+    /*
     $("#addContact span").focus(function(e) {
         var node = e.target;
+
         if(node.innerHTML.indexOf("add contact") != -1){
             node.innerHTML = "";
         }
     });
+    */
 
 
     $("#addContact span").keyup(function(e) {
@@ -68,7 +71,7 @@ $(document).ready(function() {
     $("#signupwithemail").slideUp();
 
     $("#emailsignup").click(function() {
-        $('#emailsignup').slideUp();
+       // $('#emailsignup').slideUp();
         $("#signupwithemail").slideDown();
     });
 
