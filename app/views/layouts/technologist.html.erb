@@ -126,10 +126,12 @@ Numbered list:
             <button class="twitter">twitter</button>
             <button class="github">github</button>
             <button class="emailsignup submitForm" id="emailsignup">email and password</button>
-            <div id="signupwithemail">
-                <label for="password"></label><input type="password" id="password"></input>
-                <input class="submitForm" type="submit" id="submitPassword">
-            </div>
+            <%= form_for(:technologist, url: technologists_create_path, id:"techform") do %>
+                <div id="signupwithemail">
+                    <label for="password"></label><input type="password" id="password"></input>
+                    <input class="submitForm" type="submit" id="submitPassword">
+                </div>
+            <% end %>
         </div>
     </div>
 </body>

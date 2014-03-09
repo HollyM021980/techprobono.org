@@ -103,7 +103,7 @@ $(document).ready(function() {
     });
 
     $("#submitech").click(function(event) {
-        event.preventDefault();
+        // event.preventDefault(); // this will kill the Submit event.
         var skills = [];
         var inputs = $('#techform input');
         $('#skillslist span').each(function(i, obj){

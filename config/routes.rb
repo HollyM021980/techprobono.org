@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "technologists/:id" => "technologists#show", as: 'technologist'
   post "technologists/create"
+  post "technologists/update"
 
   get '/auth/:provider/callback', to: 'sessions#create'
 end

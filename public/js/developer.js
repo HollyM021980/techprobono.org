@@ -136,6 +136,7 @@ $(document).ready(function() {
 	var windowClick = function(e) {
         var el = e.target;
         e.preventDefault();
+
         if(!core.isDescendant($("calendar"), el)) {
             if(isOpen) {
                 hideCalendar();
