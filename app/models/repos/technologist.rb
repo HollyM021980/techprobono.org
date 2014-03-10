@@ -12,6 +12,10 @@ module Repos
          account_type: ACCOUNT_TYPE)
     end
 
+    def update(user, params)
+      user.update_attributes(parse_params(params))
+    end
+
     def create_empty
       User.new(account_type)
     end
