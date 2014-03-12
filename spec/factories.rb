@@ -6,6 +6,8 @@ FactoryGirl.define do
     professional_headline "Backend Developer"
     account_type User::AccountType::TECHNOLOGIST
     association :contacts, factory: :contact
+    password "foo"
+    password_confirmation "foo"
   end
 
   factory :contact do

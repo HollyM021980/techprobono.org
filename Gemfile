@@ -10,8 +10,9 @@ gem 'acts-as-taggable-on'
 gem 'omniauth-twitter'
 gem 'omniauth'
 
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', require: 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -22,6 +23,10 @@ gem 'omniauth'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'zeus'
+end
+
+group :development do
+  gem 'pry-rails'
 end
 
 group :test do

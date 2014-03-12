@@ -25,8 +25,10 @@ class TechnologistsController < ApplicationController
       tech = technologist_repo.update(current_user, params)
       respond_to do |format|
         if tech
+          format.html { redirect_to technologist_path(tech) }
           format.json { render json: tech, status: :accepted }
         else
+          format.html { redirect_to technologist_path(tech) }
           format.json { render json: tech.errors,
                         status: :unprocessable_entity }
         end

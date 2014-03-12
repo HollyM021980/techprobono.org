@@ -21,23 +21,27 @@ module Repos
     end
 
     def parse_params(params)
+      password = params[:password] || SecureRandom.hex(10)
       {
         contacts_attributes: parse_contacts(params),
         email: params[:email],
         skill_list: parse_skills(params),
-        account_type: ACCOUNT_TYPE
-      }
+        account_type: ACCOUNT_TYPE,
+        password: password,
+        password_confirmation: password
+      }.delete_if{ |_, v| v.blank? }
     end
 
     private
 
     def parse_contacts(params)
       [:twitter, :github, :portfolio].map do |c|
+        next if params[c].blank?
         {
           contact_type: c.to_s,
           value: params[c]
         }
-      end
+      end.compact
     end
 
     def parse_skills(params)

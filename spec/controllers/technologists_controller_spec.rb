@@ -18,7 +18,9 @@ describe TechnologistsController do
         github: "techprobono",
         email: "techprobono@email.com",
         portfolio: "techprobono.org",
-        skills: "html,ruby"
+        skills: "html,ruby",
+        password: "foo",
+        password_confirmation: "foobar"
       ]
     end
 
