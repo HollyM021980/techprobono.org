@@ -24,9 +24,9 @@ class TechnologistsController < ApplicationController
     if current_user
       tech = technologist_repo.update(current_user, params)
       respond_to do |format|
-        if tech
-          format.html { redirect_to technologist_path(tech) }
+        if tech.errors.blank?
           format.json { render json: tech, status: :accepted }
+          format.html { redirect_to technologist_path(tech) }
         else
           format.html { redirect_to technologist_path(tech) }
           format.json { render json: tech.errors,

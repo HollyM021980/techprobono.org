@@ -14,6 +14,7 @@ module Repos
 
     def update(user, params)
       user.update_attributes(parse_params(params))
+      user
     end
 
     def create_empty
