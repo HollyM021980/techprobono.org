@@ -55,7 +55,7 @@ test:
 
 production:
   <<: *default
- adapter: postgresql
+  adapter: postgresql
   database: <%=ENV['OPENSHIFT_APP_NAME']%>
   username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
   password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
