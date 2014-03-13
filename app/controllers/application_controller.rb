@@ -8,7 +8,16 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def has_authentication?
+    session["#{current_user.id}_has_auth"] rescue false
+  end
+  helper_method :has_authentication?
+
   protected
+
+  def provided_authentication(user)
+    session["#{user.id}_has_auth"] = true
+  end
 
   def create_session(user)
     session[:user_id] = user.id
