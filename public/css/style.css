@@ -208,9 +208,6 @@ textarea {
     position: relative;
     top: 12px;
     left: -12px;
-
-    display: none;
-
 }
 
 #topbar_pagelinks a {
@@ -221,6 +218,7 @@ textarea {
     vertical-align: top;
 }
 
+/*
 #topbar_pagelinks a:hover::after {
     content: attr(data-descr);
     color: white;
@@ -235,7 +233,6 @@ textarea {
     border: 0;
     text-decoration: none;
 }
-/*
 #topbar_pagelinks a:hover::before {
     content: "";
     position: relative;
