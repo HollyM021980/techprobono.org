@@ -1,4 +1,3 @@
-
 var isDescendant = function (parent, child) {
     var node = child;
     while (node != null) {
@@ -10,11 +9,9 @@ var isDescendant = function (parent, child) {
     return false;
 };
 
-
 $(document).ready(function() {
 
     var documentHeight = $(document).height();
-
 
     // $('window').unbind("click");
 
@@ -36,17 +33,6 @@ $(document).ready(function() {
         }, false);
     };
 
-    /*
-    $("#addContact span").focus(function(e) {
-        var node = e.target;
-
-        if(node.innerHTML.indexOf("add contact") != -1){
-            node.innerHTML = "";
-        }
-    });
-    */
-
-
     $("#addContact span").keyup(function(e) {
         var node = e.target,
             params;
@@ -55,7 +41,8 @@ $(document).ready(function() {
             params = node.className + "+" + node.innerHTML;
             $.ajax({
                 type: "POST",
-                url: "developer/network",
+                beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                url: "developer/update",
                 data: params,
                 success: function(json) {
                     core.flash(node);
@@ -68,6 +55,68 @@ $(document).ready(function() {
         }
     });
 
+    $("#submitContacts").click(function() {
+        var inputs = document.querySelectorAll("#addContact input"),
+            params = {},
+            key, i, li;
+        for(i = 0; i < inputs.length; i++) {
+            if(inputs[i].value) {
+                key = inputs[i].id.split("_")[1];
+                params[key] = inputs[i].value;
+            }
+        }
+        /* delete this once the success function below is fully operational */
+        $('#external_details').empty();
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                li = document.createElement("LI");
+                li.className = key;
+                li.innerHTML = params[key];
+                $('#external_details').append(li);
+            }
+        }
+        var addmore = document.createElement("LI");
+        addmore.className = "addmore";
+        addmore.innerHTML = "+ add contact";
+        addmore.addEventListener("click", function() {
+            openModal("addContact");
+        }, false);
+        $('#external_details').append(addmore);
+        closeModals();
+        /* up to here */
+
+        $.ajax({
+            type: "POST",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            url: "/technologists/update",
+            data: { "contacts": params},
+            dataType: "text/json",
+            success: function(json) {
+              $('#external_details').empty();
+                for (var key in params) {
+                    if (params.hasOwnProperty(key)) {
+                        li = document.createElement("LI");
+                        li.className = key;
+                        li.innerHTML = params[key];
+                        $('#external_details').append(li);
+                    }
+                }
+                var addmore = document.createElement("LI");
+                addmore.className = "addmore";
+                addmore.innerHTML = "+ add contact";
+                addmore.addEventListener("click", function() {
+                    openModal("addContact");
+                }, false);
+                $('#external_details').append(addmore);
+                closeModals();
+            },
+            error: function() {
+                // do something here. Would be nice.
+            }
+        });
+
+    });
+
     $("#signupwithemail").slideUp();
 
     $("#emailsignup").click(function() {
@@ -76,7 +125,6 @@ $(document).ready(function() {
     });
 
     $("#external_details .addmore").click(function() {
-        console.log("add details")
         openModal("addContact");
     });
 
@@ -103,15 +151,21 @@ $(document).ready(function() {
             params;
         if (e.keyCode === 13 || e.keyCode === 10) {
             params = node.className + "+" + node.innerHTML;
-            /* get rid of this when the ajax is working */
+            /* get rid of this when the ajax is working
+                POST  /technologist/4
+        { "professional_headline" => "My Headline",
+          "id" => "4" }
+          */
+
             var head = $('#updateHeadline')[0];
             head.style.fontStyle = "normal";
             head.innerHTML = node.value;
             closeModals();
             $.ajax({
                 type: "POST",
-                url: "developer/headline",
-                data: params,
+                url: "/technologist/update",
+                beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                data: { "professional_headline": node.innerHTML},
                 success: function(json) {
                     var head = $('#updateHeadline')[0];
                     head.style.fontStyle = "normal";
