@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post "technologists/update"
 
   get '/auth/:provider/callback', to: 'sessions#create'
+  get "logout" => "sessions#destroy", :as => "logout"
+  resources :sessions
 end

@@ -22,7 +22,7 @@ module Repos
     end
 
     def parse_params(params, default_password=false)
-      password = SecureRandom.hex(10) if default_password
+      password = default_password ? SecureRandom.hex(10) : params[:password]
       {
         contacts_attributes: parse_contacts(params),
         professional_headline: params[:professional_headline],
