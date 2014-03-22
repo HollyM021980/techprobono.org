@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Tech Pro Bono: Developer</title>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/css/profiles.css">
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="/js/developer.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/profiles.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/developer.js" type="text/javascript"></script>
     <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,41 +16,38 @@
             <div class="tpb">Tech ProBono</div>
             <div id="topbar_pagelinks">
                 <a id="loginout" class="topbar_pagelink" data-descr="log out"></a>
+                <!--
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
+                -->
                 <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>Tom Hanks</nobr></a>
             </div>
             <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
         </div>
     </section>
 
-
     <div class="main">
-    <div id="tech_button"><p>Technologist<span class="addmore">+ professional headline</p></div>
+    <div id="tech_button"><p>Technologist<span class="addmore" id="updateHeadline">+ professional headline</p></div>
     <nav>
-        <div id="profile_pic"></div>
+        <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
         <ul id="external_details">
             <li class="location">New York / USA</li>
             <li class="twitter">@childrenshospital</li>
             <li class="addmore">+ add contact</li>
-
         </ul>
-
     </nav>
 
     <section id="projects">
         <section>
-
         <h1 id="developer_name">Tom Hanks</h1>
-        <p class="addmore">+ add an introduction</p>
-            <ul class="techlist captioned" title="Technologies I use">
+        <p class="addmore" id="updateIntro">+ add an introduction</p>
+            <ul id="techlist" class="techlist captioned" title="Technologies I use">
                 <li>javascript</dd>
                 <li>ajax</dd>
                 <li>html5</dd>
                 <li class="addmore">+ add more technologies</li>
             </dl>
         </section>
-
     </section>
 
     <footer>
@@ -61,14 +58,15 @@
     <div id="addContact" class="module modal hidden">
         <h1>add contact details</h1>
         <div>
-            <label for="location" class="location"><span>New York, USA</span></label>
-            <label for="personal" class="personal"><span>childrenshospital.com</span></label>
-            <label for="tumblr" class="tumblr addmore"><span>+ add contact</span></label>
-            <label for="twitter" class="twitter"><span>@childrenshospital</span></label>
-            <label for="meetup" class="meetup addmore"><span>+ add contact</span></label>
-            <label for="linkedin" class="linkedin addmore"><span>+ add contact</span></label>
-            <label for="lanyrd" class="lanyrd addmore"><span>+ add contact</span></label>
-            <label for="github" class="github addmore"><span>+ add contact</span></label>
+            <label for="contact_location" class="location"><input value="New York, USA" id="contact_location" placeholder="+ add contact"></input></label>
+            <label for="contact_personal" class="personal"><input value="childrenshospital.com" id="contact_personal" placeholder="+ add contact"></input></label>
+            <label for="contact_tumblr" class="tumblr addmore"><input value="" id="contact_tumblr" placeholder="+ add contact"></input></label>
+            <label for="contact_twitter" class="twitter"><input value="@childrenshospital" id="contact_twitter" placeholder="+ add contact"></input></label>
+            <label for="contact_meetup" class="meetup addmore"><input value="" id="contact_meetup" placeholder="+ add contact"></input></label>
+            <label for="contact_linkedin" class="linkedin addmore"><input value="" id="contact_linkedin" placeholder="+ add contact"></input></label>
+            <label for="contact_lanyrd" class="lanyrd addmore"><input value="" id="contact_lanyrd" placeholder="+ add contact"></input></label>
+            <label for="contact_github" class="github addmore"><input value="" id="contact_github" placeholder="+ add contact"></input></label>
+            <input class="submitForm" type="submit" id="submitContacts">
         </div>
     </div>
 
@@ -106,6 +104,7 @@ Numbered list:
   3. pears
           </pre>
         </div>
+        <input class="submitForm" type="submit" id="submitDescription">
     </div>
     <div id="addHeadline" class="module modal hidden">
         <h1>add professional headline</h1>
@@ -129,9 +128,9 @@ Numbered list:
             <button class="emailsignup submitForm" id="emailsignup">email and password</button>
             <%= form_for(:technologist, url: technologists_update_path, id:"techform") do %>
                 <div id="signupwithemail">
-                  <label for="password"></label>
-                  <input name="password" type="password" id="password" />
-                  <input class="submitForm" type="submit" id="submitPassword">
+                    <label for="password"></label>
+                    <input name="password" type="password" id="password" />
+                    <input class="submitForm" type="submit" id="submitPassword">
                 </div>
             <% end %>
         </div>
