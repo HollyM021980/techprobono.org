@@ -313,7 +313,7 @@ module formatting
 }
 
 .modal label:before {
-    content: attr(for) !important;
+    content: attr("data-title") !important;
     position: absolute;
     top: 0px;
     left: 33px;

@@ -42,7 +42,7 @@
                 <div id="progress">
                         <p>We are right at the start of this project, but good to go. Sign up here to register as a tech who wants to go pro bono</p>
                         <p>And that's everyone in technology - from copywriters to UXers, developers of all flavours, proposal writers, server gurus to hardware hackers, even project managers!</p>
-                        <label for="email">Email address</label>
+                        <label for="email" data-title="email">Email address</label>
                         <input type="email" name="email" id="email"></input>
                         <label for="portfolio">Website / portfolio</label>
                         <input name="portfolio" id="portfolio" placeholder="optional"></input>
@@ -79,8 +79,8 @@
                     <input name="orgname" id="orgname"></input>
                     <label for="website">Website</label>
                     <input type="url" name="website" id="website"></input>
-                    <label for="email">Contact email</label>
-                    <input type="email" name="email" id="email"></input>
+                    <label for="good_case_email">Contact email</label>
+                    <input type="email" name="good_case_email" id="good_case_email"></input>
                     <br>
                     <button class="submitForm" name="submitgoodcause" id="submitgoodcause">Submit</button>
                 </form>
@@ -97,10 +97,10 @@
         <h1>login</h1>
         <div>
             <form class="modalform">
-            <label for="email"></label>
-            <input type="email" name="email" id="email"></input>
-            <label for="password"></label>
-            <input name="password" type="password" id="password" />
+           <label for="login_email" data-title="email">email</label>
+            <input type="email" name="login_email" id="login_email"></input>
+            <label for="login_password" data-title="password">password</label>
+            <input name="password" type="login_password" id="login_password" />
             <br>
             <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
             <input class="submitForm" type="submit" id="submitPassword" value="Login">

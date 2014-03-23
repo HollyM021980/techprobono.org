@@ -99,10 +99,10 @@
         <h1>login</h1>
         <div>
         <%= form_tag sessions_path, class:"modalform"  do %>
-            <label for="email"></label>
-            <input type="email" name="email" id="email"></input>
-            <label for="password"></label>
-            <input name="password" type="password" id="password" />
+            <label for="login_email" data-title="email">email</label>
+            <input type="email" name="login_email" id="login_email"></input>
+            <label for="login_password" data-title="password">password</label>
+            <input name="password" type="login_password" id="login_password" />
             <br>
             <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
             <input class="submitForm" type="submit" id="submitPassword" value="Login">

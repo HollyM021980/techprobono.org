@@ -39,10 +39,12 @@ button {
     float: right;
 }
 
-label[for="password"], label[for="email"] {
+label[for="login_email"], label[for="login_password"] {
     float: left;
     width: 25%;
     padding-left: 0px;
+    left: 0px;
+    top: 0.8rem;
 }
 
 #techform  label[for="email"] {
@@ -50,12 +52,8 @@ label[for="password"], label[for="email"] {
     width: 45%;
 }
 
-label[for="password"]:before, label[for="email"]:before  {
-    left: 0px;
-    top: 0.8rem;
-}
 
-#password, #email {
+#login_email, #login_password {
     float: left;
     width: 65%;
     border-top: 1px solid #ccc
