@@ -4,7 +4,7 @@ module Repos
     ACCOUNT_TYPE = User::AccountType::TECHNOLOGIST
 
     def create(params)
-      User.create(parse_params(params, true))
+      User.create(parse_params(params))
     end
 
     def find(id)
@@ -21,8 +21,7 @@ module Repos
       User.new(account_type)
     end
 
-    def parse_params(params, default_password=false)
-      password = default_password ? SecureRandom.hex(10) : params[:password]
+    def parse_params(params)
       {
         contacts_attributes: parse_contacts(params),
         professional_headline: params[:professional_headline],
@@ -30,8 +29,8 @@ module Repos
         email: params[:email],
         skill_list: parse_skills(params),
         account_type: ACCOUNT_TYPE,
-        password: password,
-        password_confirmation: password
+        password: params[:password],
+        password_confirmation: params[:password]
       }.delete_if{ |_, v| v.blank? }
     end
 

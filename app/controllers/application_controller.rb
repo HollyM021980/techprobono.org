@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def has_authentication?
-    session["#{current_user.id}_has_auth"] rescue false
+    !current_user.password_digest.nil?
   end
   helper_method :has_authentication?
 
