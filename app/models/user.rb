@@ -13,4 +13,11 @@ class User < ActiveRecord::Base
     TECHNOLOGIST=0
   end
 
+  def twitter_handle
+    contacts.find_by(contact_type: "twitter").try(:value)
+  end
+
+  def github
+    contacts.find_by(contact_type: "github").try(:value)
+  end
 end
