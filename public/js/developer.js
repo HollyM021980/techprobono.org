@@ -100,7 +100,7 @@ $(document).ready(function() {
             dataType: "text/json",
             success: function(data) {
                 $('#external_details').empty();
-                for (var i = 0, i < data.contacts.length; i++) {
+                for (var i = 0; i < data.contacts.length; i++) {
                         li = document.createElement("LI");
                         li.className = data.contacts[i].contact_type;
                         li.innerHTML = data.contacts[i].value;
