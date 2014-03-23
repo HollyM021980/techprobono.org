@@ -45,6 +45,11 @@ label[for="password"], label[for="email"] {
     padding-left: 0px;
 }
 
+#techform  label[for="email"] {
+    padding-left: 16%;
+    width: 45%;
+}
+
 label[for="password"]:before, label[for="email"]:before  {
     left: 0px;
     top: 0.8rem;
