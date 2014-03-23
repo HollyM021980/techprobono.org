@@ -165,6 +165,7 @@ $(document).ready(function() {
                 type: "POST",
                 url: "/technologists/update",
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                // FIXME: node.innerHTML is empty when you submit it to DB.
                 data: { "professional_headline": node.innerHTML},
                 success: function(json) {
                     var head = $('#updateHeadline')[0];
