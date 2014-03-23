@@ -62,6 +62,10 @@ form {
     max-width: 100%
 }
 
+.modalform {
+    width: 100%;
+}
+
 .form {
     background: url(../img/pink_texture.jpg) repeat 0 0 #f6e4e2;
     border-bottom: 2px solid #333;

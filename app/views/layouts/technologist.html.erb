@@ -121,12 +121,14 @@ Numbered list:
             <p>Please take some time to fill in more details like an introduction (you can use markdown), your professional headline
             (<em>Front end specialist</em> or <em>Creative Genius</em> would be good examples. Go wild)
             and any extra contact details that you want people to know about.</p>
-            <p>But just before that, we need to know how you want to log in. Please pick one … </p>
+            <!--
             <button class="facebook">facebook</button>
             <button class="twitter">twitter</button>
             <button class="github">github</button>
-            <button class="emailsignup submitForm" id="emailsignup">email and password</button>
-            <%= form_for(:technologist, url: technologists_update_path, id:"techform") do %>
+            <button class="emailsignup submitForm" id="emailsignup">add a password</button>
+            -->
+            <p>But firstly, most importantly, keep your account safe. Add a password:</p>
+            <%= form_for(:technologist, url: technologists_update_path, id:"techform", class:"modalform") do %>
                 <div id="signupwithemail">
                     <label for="password"></label>
                     <input name="password" type="password" id="password" />

@@ -12,6 +12,7 @@ var isDescendant = function (parent, child) {
 $(document).ready(function() {
 
     var documentHeight = $(document).height();
+    var okToCloseModals = false;
 
     // $('window').unbind("click");
 
@@ -20,6 +21,11 @@ $(document).ready(function() {
     };
 
     var openModal = function(modal) {
+        /* fix for a bug.. issue nr 2
+        if(!okToCloseModals) {
+            return false;
+        }
+        */
         closeModals();
         $('#' + modal).removeClass("hidden");
         window.addEventListener("click", function windowClickDetector(e) {
@@ -32,6 +38,10 @@ $(document).ready(function() {
             }
         }, false);
     };
+
+    $("submitPassword").click(function() {
+        okToCloseModals = true;
+    })
 
     $("#addContact span").keyup(function(e) {
         var node = e.target,
@@ -117,10 +127,7 @@ $(document).ready(function() {
 
     });
 
-    $("#signupwithemail").slideUp();
-
     $("#emailsignup").click(function() {
-       // $('#emailsignup').slideUp();
         $("#signupwithemail").slideDown();
     });
 
@@ -151,12 +158,6 @@ $(document).ready(function() {
             params;
         if (e.keyCode === 13 || e.keyCode === 10) {
             params = node.className + "+" + node.innerHTML;
-            /* get rid of this when the ajax is working
-                POST  /technologist/4
-        { "professional_headline" => "My Headline",
-          "id" => "4" }
-          */
-
             var head = $('#updateHeadline')[0];
             head.style.fontStyle = "normal";
             head.innerHTML = node.value;
@@ -166,7 +167,7 @@ $(document).ready(function() {
                 url: "/technologists/update",
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
                 // FIXME: node.innerHTML is empty when you submit it to DB.
-                data: { "professional_headline": node.innerHTML},
+                data: { "professional_headline": node.value},
                 success: function(json) {
                     var head = $('#updateHeadline')[0];
                     head.style.fontStyle = "normal";

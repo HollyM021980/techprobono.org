@@ -14,31 +14,31 @@ $(document).ready(function() {
     $("#techformdiv").slideUp();
     $("#goodcauseformdiv").slideUp();
 
-    $("#revealTechform").click(function(){
+    $("#revealTechform").click(function() {
         toggleForm($("#techformdiv"));
     });
 
-    $("#revealCausesform").click(function(){
+    $("#revealCausesform").click(function() {
         toggleForm($("#goodcauseformdiv"))
     });
 
-    $('#good_cause_button').click(function(){
+    $('#good_cause_button').click(function() {
             var top = $('#forgood').offset().top;
             $('html,body').animate({scrollTop: documentHeight}, 800);
     });
 
-    $('#tech_button').click(function(){
+    $('#tech_button').click(function() {
             var top = $('#fortech').offset().top;
             $('html,body').animate({scrollTop: top}, 800);
     });
 
-    $('#closetech').click(function(){
+    $('#closetech').click(function() {
         toggleForm($("#techformdiv"));
     });
 
     var createTechListItem = function (e) {
         var span;
-        if(e.keyCode && (e.keyCode === 13) && (e.target.value.length > 1)){
+        if(e.keyCode && (e.keyCode === 13) && (e.target.value.length > 1)) {
             span = document.createElement("SPAN");
             span.innerHTML = e.target.value;
             span.id = "tech_" + e.target.value.replace(/ /g, "_#_");
@@ -50,22 +50,22 @@ $(document).ready(function() {
     };
     $('#skillslist').click(function(e) {
         var elementID = "";
-        if(e.target.tagName.toUpperCase() === "SPAN"){
+        if(e.target.tagName.toUpperCase() === "SPAN") {
             elementID = "tech_" + e.target.innerHTML.replace(/ /g, "_#_");
             $("[id="+ elementID +"]").remove();
         }
     });
 
-    $('#skillslist input').keyup(function(e){
+    $('#skillslist input').keyup(function(e) {
         e.preventDefault();
         createTechListItem(e);
     });
-    $('#skillslist input').blur(function(e){
+    $('#skillslist input').blur(function(e) {
         e.preventDefault();
         createTechListItem(e);
     });
 
-    $('#techform').submit(function(e){
+    $('#techform').submit(function(e) {
         e.preventDefault();
     });
 
@@ -73,7 +73,7 @@ $(document).ready(function() {
         event.preventDefault();
         var inputs = $('#goodcauseform input');
         var serialised = [];
-        inputs.each(function(i){
+        inputs.each(function(i) {
             serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
         });
         var query = serialised.join("&");
@@ -82,7 +82,7 @@ $(document).ready(function() {
             type: "POST",
             url: "goodcause/create",
             data: query,
-            success: function(json){
+            success: function(json) {
                 $('#progress').slideDown();
                 var response = json;
                 if(response.error) {
@@ -104,19 +104,20 @@ $(document).ready(function() {
 
     $("#submitech").click(function(event) {
         // event.preventDefault(); // this will kill the Submit event.
+                                    // yes. That's what it's there for
         var skills = [];
         var inputs = $('#techform input');
-        $('#skillslist span').each(function(i, obj){
+        $('#skillslist span').each(function(i, obj) {
             skills.push(obj.innerHTML);
         })
         $('#skills').val(skills.join(","));
         var serialised = [];
         if ($("#github")) {
-            if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1){
+            if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1) {
                 $("#github")[0].value = $("#github")[0].value.split("//")[1];
             }
         }
-        inputs.each(function(i){
+        inputs.each(function(i) {
             serialised.push("" + inputs[i].name + "=" + encodeURIComponent(inputs[i].value));
         });
 
