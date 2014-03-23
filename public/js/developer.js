@@ -96,7 +96,7 @@ $(document).ready(function() {
             type: "POST",
             beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             url: "/technologists/update",
-            data: { "contacts": params},
+            data: params,
             dataType: "text/json",
             success: function(data) {
                 $('#external_details').empty();
