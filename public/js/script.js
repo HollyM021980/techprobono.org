@@ -2,6 +2,15 @@ $(document).ready(function() {
 
     var documentHeight = $(document).height();
 
+    var closeModals = function() {
+        $(".modal").addClass("hidden");
+    };
+
+    var openModal = function(modal) {
+        $('#' + modal).removeClass("hidden");
+    };
+
+
     var toggleForm = function(box) {
         if(box.is(":visible")) {
             box.slideUp();
@@ -13,6 +22,14 @@ $(document).ready(function() {
 
     $("#techformdiv").slideUp();
     $("#goodcauseformdiv").slideUp();
+
+    $("#loginout").click(function() {
+        openModal("loginModal");
+    });
+
+    $("#cancelSubmitPassword").click(function() {
+        closeModals();
+    });
 
     $("#revealTechform").click(function() {
         toggleForm($("#techformdiv"));

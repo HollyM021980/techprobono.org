@@ -133,6 +133,16 @@ textarea {
     cursor: pointer;
 }
 
+input.cancel {
+    color: #12a09b;
+    padding: 0.4rem 1.6rem 0.4rem 1.6rem;
+    margin: 12px 0px;
+    border: 1px solid #12a09b;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
 .closeSection {
     color: #fff;
     padding: 0.4rem 1.2rem 0.4rem 1.2rem;
@@ -251,6 +261,11 @@ textarea {
     background-color: rgb(107, 107, 107);
 }
 */
+
+.topbar_pagelink_indexpage {
+    border: 0;
+}
+
 .topbar_pagelink {
     border: 0;
     border-right: 1px solid rgb(197, 197, 197);
@@ -294,6 +309,7 @@ module formatting
     top: 200px;
     left: 50%;
     margin-left: -200px;
+    z-index: 99;
 }
 
 .modal label:before {

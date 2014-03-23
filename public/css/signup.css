@@ -29,6 +29,32 @@ button {
     margin: 2rem 0 !important;
 }
 
+#loginModal div {
+    padding: 12px 18px;
+}
+
+#loginModal #submitPassword {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    float: right;
+}
+
+label[for="password"], label[for="email"] {
+    float: left;
+    width: 25%;
+    padding-left: 0px;
+}
+
+label[for="password"]:before, label[for="email"]:before  {
+    left: 0px;
+    top: 0.8rem;
+}
+
+#password, #email {
+    float: left;
+    width: 65%;
+    border-top: 1px solid #ccc
+}
 
 /**
  holding page info stuff

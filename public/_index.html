@@ -10,7 +10,11 @@
 	<script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="main">
+    <div class="main">
+        <div id="topbar_pagelinks">
+            <a id="loginout" class="topbar_pagelink_indexpage" data-descr="log out"></a>
+        </div>
+
 	    <section id="header">
 	        <img src="img/logo.png" />
             <div>
@@ -34,8 +38,10 @@
                 <button class="submitForm"  name="" id="revealTechform">sign me up</button>
             </div>
             <div class="form" id="techformdiv">
-            <form id="techform"><div id="progress">
+                <form id="techform">
+                <div id="progress">
                     <p>We are right at the start of this project, but good to go. Sign up here to register as a tech who wants to go pro bono</p>
+                    <p>And that's everyone in technology - from copywriters to UXers, developers of all flavours, proposal writers, server gurus to hardware hackers, even project managers!</p>
                     <label for="twitter">Twitter name</label>
                     <input name="twitter" id="twitter"></input>
                     <label for="github">Github</label>
@@ -53,14 +59,6 @@
                     <button class="submitForm"  name="submittech" id="submitech">Submit</button>
                     <br>
                 </div>
-                <div id="report"></div>
-
-                <p>One of the best things you can do now is to help get this project kicking.</p>
-                <p>To get started right away, go to <a href="https://github.com/techprobono/techprobono.org" title="TBP github repo">our github</a> repository. <br>
-                If you know what it means to <em>fork this project</em>, do that. Check the backlog. Implement an idea of your own.</p>
-                <p>If you're not that sort of tech, but have ideas with what we can do to help you give your time, please create a page on the wiki with ideas - it's all point and click stuff!
-                <p>Designers! Why not upload sketches, designs or improve or comment on other people's contributions?</p>
-
                 <a class="closeSection"  name="closetech" id="closetech">Close this</a>
             </form>
             </div>
@@ -94,6 +92,20 @@
             <div class="tpb">Tech ProBono</div>
             <div class="msan">matching skills and needs</div>
         </footer>
+    </div>
+     <div class="modal module hidden" id="loginModal">
+        <h1>login</h1>
+        <div>
+            <form class="modalform">
+            <label for="email"></label>
+            <input type="email" name="email" id="email"></input>
+            <label for="password"></label>
+            <input name="password" type="password" id="password" />
+            <br>
+            <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
+            <input class="submitForm" type="submit" id="submitPassword" value="Login">
+            </form>
+        </div>
     </div>
 </body>
 </html>
