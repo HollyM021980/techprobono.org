@@ -5,6 +5,5 @@ class Contact < ActiveRecord::Base
   validates :contact_type, presence: true
   validates :value, presence: true
 
-  attr_accessor :label
-
+  scope :contact_value_for, -> (contacttype) { find_by(contact_type: contacttype).try(:value) }
 end

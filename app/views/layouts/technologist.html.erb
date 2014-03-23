@@ -20,14 +20,14 @@
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
                 -->
-                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>Tom Hanks</nobr></a>
+                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr><%= tech_name %></nobr></a>
             </div>
             <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
         </div>
     </section>
 
     <div class="main">
-      <div id="tech_button"><p>Technologist<span class="addmore" id="updateHeadline"><%="+ professional headline" || tech.professional_headline %> </p></div>
+      <div id="tech_button"><p>Technologist<span class="addmore" id="updateHeadline"><%= tech_professional_headline  %></p></div>
     <nav>
         <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
         <ul id="external_details">
@@ -39,7 +39,7 @@
 
     <section id="projects">
         <section>
-        <h1 id="developer_name">Tom Hanks</h1>
+        <h1 id="developer_name"><%= tech_name %></h1>
         <p class="addmore" id="updateIntro">+ add an introduction</p>
             <ul id="techlist" class="techlist captioned" title="Technologies I use">
                 <li>javascript</dd>
