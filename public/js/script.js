@@ -120,8 +120,7 @@ $(document).ready(function() {
     });
 
     $("#submitech").click(function(event) {
-        // event.preventDefault(); // this will kill the Submit event.
-                                    // yes. That's what it's there for
+        event.preventDefault();
         var skills = [];
         var inputs = $('#techform input');
         $('#skillslist span').each(function(i, obj) {
