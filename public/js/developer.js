@@ -67,24 +67,21 @@ $(document).ready(function() {
 
     $("#submitContacts").click(function() {
         var inputs = document.querySelectorAll("#addContact input"),
-            params = {},
-            key, i, li;
+            params = {
+                contacts: []
+            },
+            i, li;
         for(i = 0; i < inputs.length; i++) {
             if(inputs[i].value) {
-                key = inputs[i].id.split("_")[1];
-                params[key] = inputs[i].value;
+                params.contacts.push({
+                   contact_type:  inputs[i].id,
+                   value: inputs[i].value
+                })
             }
         }
         /* delete this once the success function below is fully operational */
         $('#external_details').empty();
-        for (var key in params) {
-            if (params.hasOwnProperty(key)) {
-                li = document.createElement("LI");
-                li.className = key;
-                li.innerHTML = params[key];
-                $('#external_details').append(li);
-            }
-        }
+
         var addmore = document.createElement("LI");
         addmore.className = "addmore";
         addmore.innerHTML = "+ add contact";
@@ -101,15 +98,13 @@ $(document).ready(function() {
             url: "/technologists/update",
             data: { "contacts": params},
             dataType: "text/json",
-            success: function(json) {
-              $('#external_details').empty();
-                for (var key in params) {
-                    if (params.hasOwnProperty(key)) {
+            success: function(data) {
+                $('#external_details').empty();
+                for (var i = 0, i < data.contacts.length; i++) {
                         li = document.createElement("LI");
-                        li.className = key;
-                        li.innerHTML = params[key];
+                        li.className = data.contacts[i].contact_type;
+                        li.innerHTML = data.contacts[i].value;
                         $('#external_details').append(li);
-                    }
                 }
                 var addmore = document.createElement("LI");
                 addmore.className = "addmore";
