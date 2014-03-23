@@ -8,16 +8,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def has_authentication?
-    !current_user.password_digest.nil?
-  end
-  helper_method :has_authentication?
-
   protected
-
-  def provided_authentication(user)
-    session["#{user.id}_has_auth"] = true
-  end
 
   def create_session(user)
     session[:user_id] = user.id
