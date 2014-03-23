@@ -163,7 +163,7 @@ $(document).ready(function() {
             closeModals();
             $.ajax({
                 type: "POST",
-                url: "/technologist/update",
+                url: "/technologists/update",
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
                 data: { "professional_headline": node.innerHTML},
                 success: function(json) {
