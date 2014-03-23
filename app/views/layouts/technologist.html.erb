@@ -27,27 +27,26 @@
     </section>
 
     <div class="main">
-        <div id="tech_button"><p>Technologist<span class="addmore" id="updateHeadline"><%= tech_professional_headline  %></p></div>
-        <nav>
-            <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
-            <ul id="external_details">
-                <li class="location">New York / USA</li>
-                <li class="twitter">@childrenshospital</li>
-                <li class="addmore">+ add contact</li>
-            </ul>
-        </nav>
+      <div id="tech_button"><p>Technologist<span class="<%= add_more %>" id="updateHeadline"><%= tech_professional_headline  %></p></div>
+    <nav>
+        <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
+        <ul id="external_details">
+            <li class="location">New York / USA</li>
+            <li class="twitter">@childrenshospital</li>
+            <li class="addmore">+ add contact</li>
+        </ul>
+    </nav>
 
-        <section id="projects">
-            <section>
-            <h1 id="developer_name"><%= tech_name %></h1>
-            <p class="addmore" id="updateIntro">+ add an introduction</p>
-                <ul id="techlist" class="techlist captioned" title="Technologies I use">
-                    <li>javascript</dd>
-                    <li>ajax</dd>
-                    <li>html5</dd>
-                    <li class="addmore">+ add more technologies</li>
-                </dl>
-            </section>
+    <section id="projects">
+        <section>
+        <h1 id="developer_name"><%= tech_name %></h1>
+        <p class="addmore" id="updateIntro">+ add an introduction</p>
+            <ul id="techlist" class="techlist captioned" title="Technologies I use">
+                <% tech.skill_list.each do |skill| %>
+                    <li><%= skill %></li>
+                <% end %>
+                <li class="addmore">+ add more technologies</li>
+            </dl>
         </section>
 
         <footer>

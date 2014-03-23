@@ -11,6 +11,10 @@ module TechnologistHelper
     tech.professional_headline || "+ professional headline"
   end
 
+  def add_more
+    "addmore" if tech.professional_headline.nil?
+  end
+
   def tech_name
     tech.twitter_handle ||
     tech.github ||
