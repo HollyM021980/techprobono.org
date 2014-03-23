@@ -42,9 +42,9 @@
         <h1 id="developer_name"><%= tech_name %></h1>
         <p class="addmore" id="updateIntro">+ add an introduction</p>
             <ul id="techlist" class="techlist captioned" title="Technologies I use">
-                <li>javascript</dd>
-                <li>ajax</dd>
-                <li>html5</dd>
+                <% tech.skill_list.each do |skill| %>
+                    <li><%= skill %></li>
+                <% end %>
                 <li class="addmore">+ add more technologies</li>
             </dl>
         </section>
