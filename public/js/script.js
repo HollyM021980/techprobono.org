@@ -82,10 +82,6 @@ $(document).ready(function() {
         createTechListItem(e);
     });
 
-    $('#techform').submit(function(e) {
-        e.preventDefault();
-    });
-
     $("#submitgoodcause").click(function(event) {
         event.preventDefault();
         var inputs = $('#goodcauseform input');
@@ -119,9 +115,14 @@ $(document).ready(function() {
         });
     });
 
+    $('#techform').keydown(function(event){
+        if(event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
+
     $("#submitech").click(function(event) {
-        // event.preventDefault(); // this will kill the Submit event.
-                                    // yes. That's what it's there for
         var skills = [];
         var inputs = $('#techform input');
         $('#skillslist span').each(function(i, obj) {

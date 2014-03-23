@@ -38,7 +38,7 @@
                 <button class="submitForm"  name="" id="revealTechform">sign me up</button>
             </div>
             <div class="form" id="techformdiv">
-                <%= form_for(:technologist, url: technologists_create_path, id:"techform") do %>
+              <%= form_for(:technologist, url: technologists_create_path, html: { id:"techform" }) do %>
                     <div id="progress">
                         <p>We are right at the start of this project, but good to go. Sign up here to register as a tech who wants to go pro bono</p>
                         <p>And that's everyone in technology - from copywriters to UXers, developers of all flavours, proposal writers, server gurus to hardware hackers, even project managers!</p>
