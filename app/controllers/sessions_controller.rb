@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    user = User.find_by_email(params[:login_email])
+    if user && user.authenticate(params[:login_password])
       session[:user_id] = user.id
       redirect_to technologist_path(user), :notice => "Logged in!"
     else
