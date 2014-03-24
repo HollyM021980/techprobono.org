@@ -120,16 +120,31 @@ label[for="login_email"], label[for="login_password"] {
 }
 
 #skillslist {
-    height: 180px;
-    width: 420px;
+    min-height: 180px;
+    width: 400px;
+    max-width: 400px;
 }
 
 #skillslist input {
     border: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 0.3rem 1rem;
+    display: inline-block;
+    margin: 0 0.1rem 0.8rem;
     font-family: "PT Sans Narrow";
-    width: 104px;
-    line-height: 1rem;
+    width: 120px;
+    line-height: 1.6rem;
+    background-color: #efefef;
+    border-radius: 2px;
+    border-top: 2px solid #dedede;
+    cursor: pointer;
+}
+#skillslist input:first-child {
+    width: 86px;
+}
+.techlist li, .techlist span {
+    margin: 0 0.2rem 0.4rem;
 }
 
 #skillslist input:focus {

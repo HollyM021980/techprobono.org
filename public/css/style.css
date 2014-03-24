@@ -313,7 +313,7 @@ module formatting
 }
 
 .modal label:before {
-    content: attr("data-title") !important;
+    content: attr(class) !important;
     position: absolute;
     top: 0px;
     left: 33px;
@@ -390,7 +390,7 @@ technology list
     border-style: solid;
     border-color: rgb(140, 140, 140);
     border-radius: 2px;
-    margin: 0 0.1rem 0.8rem;
+    margin: 0 0.2rem 0.8rem;
 }
 
 .techlist li.addmore {
