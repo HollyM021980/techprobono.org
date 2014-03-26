@@ -62,12 +62,18 @@ h1 {
     font-weight: 100;
 }
 
-
-
 #tech_button {
     position: absolute;
     right: -44px;
     top: -12px;
+}
+
+#profile_cause_button {
+    position: absolute;
+    right: -44px;
+    top: 12px;
+    background: url(../img/profile_cause_button.png) no-repeat 0 0 transparent;
+    z-index: 10;
 }
 
 #external_details {

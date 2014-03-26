@@ -455,7 +455,8 @@ button label developer / project / good cause lanyards
 */
 
 #good_cause_button,
-#tech_button {
+#tech_button,
+#profile_cause_button {
     padding-left: 32px;
     height: 118px;
     width: 288px;
@@ -480,14 +481,16 @@ button label developer / project / good cause lanyards
 #good_cause_button,
 #tech_button,
 #good_cause_button p,
-#tech_button p {
+#tech_button p,
+#profile_cause_button p {
     font-size: 2.4rem;
     color: white;
     margin: 22px;
 }
 
 #good_cause_button span,
-#tech_button span {
+#tech_button span,
+#profile_cause_button span {
     display: block;
     font-size: 1.6rem;
     color: white;
