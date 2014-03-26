@@ -19,7 +19,7 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, button, p, a, caption, label, submit, textarea, input, span, dd, dt, ul, li {
+h1, h2, h3, button, p, a, caption, label, submit, select, option, textarea, input, span, dd, dt, ul, li {
     color: #585352;
     font-family: "PT Sans Narrow";
     font-size: 1.3rem;
@@ -87,11 +87,11 @@ label:after {
     content: ':';
 }
 
-input, textarea, #skillslist {
+input, textarea, select, #skillslist {
     display: inline-block;
     clear: right;
     border: 1px solid #ccc;
-    border-top: 2px;
+    border-top: 2px solid #ccc;;
     padding: 8px;
     font-size: 1.4rem;
     line-height: 2.1rem;
@@ -99,6 +99,13 @@ input, textarea, #skillslist {
     max-width: 275px;
     margin-top: 2px;
     background-color: white;
+}
+
+select {
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    max-width: 100%;
+    height: 3rem;
 }
 
 textarea {

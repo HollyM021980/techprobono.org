@@ -58,6 +58,8 @@ h1 {
     font-weight: 100;
 }
 
+
+
 #tech_button {
     position: absolute;
     right: -44px;
@@ -92,9 +94,8 @@ h1 {
 /**
 info and details
 **/
-
-#developer_name {
-    margin: 0
+#projects h1:first-child {
+    margin: 0;
 }
 
 #addContact div, #addHeadline div, #completeSignup > div {
@@ -175,12 +176,10 @@ label[for="password"]:before {
 #password {
     float: left;
     width: 75%;
-    border-top: 1px solid #ccc
 }
 
 #submitPassword {
     width: 100%;
-    border-top: 1px solid #ccc;
     margin: 1rem 0;
 }
 /**
