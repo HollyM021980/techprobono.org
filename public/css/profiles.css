@@ -24,6 +24,10 @@ nav > * {
     margin-top: 2rem
 }
 
+#projects.form {
+    padding: 1rem 2rem;
+}
+
 #projects section:first-child {
     width: 720px;
 }
