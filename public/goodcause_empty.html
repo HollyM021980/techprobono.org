@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Tech Pro Bono: Developer</title>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/profiles.css">
+	<link rel="stylesheet" type="text/css" href="css/flags.css">
+    <!--	<script src="../../jquery/jquery-1.7.2.min.js"></script> -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/developer.js" type="text/javascript"></script>
+</head>
+<body>
+    <section id="topbar">
+        <div id="topbar_main" class="main">
+            <div class="tpb">Tech ProBono</div>
+            <div id="topbar_pagelinks">
+                <a id="loginout" class="topbar_pagelink" data-descr="log out"></a>
+                <!--
+                <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
+                <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
+                -->
+                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>Tom Hanks</nobr></a>
+            </div>
+            <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
+        </div>
+    </section>
+
+    <div class="main">
+        <div id="tech_button"><p>Good Cause!<span class="addmore" id="updateHeadline"></p></div>
+        <nav>
+            <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
+            <h1 id="goodcause_name">The Children's Hospital</h1>
+            <ul id="external_details">
+                <li class="location de">Düsseldorf / Germany</li>
+                <li class="twitter">@childrenshospital</li>
+            </ul>
+        </nav>
+
+        <section id="projects">
+            <section>
+            <h2>Real World Details</h2>
+                <label for="realworld_">Official organisation name
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_road">Road name
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_number">Building number
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_towncity">Town / city
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_region">County / Region
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_country">Country
+                    <input id="realworld_official"></input>
+                </label>
+                <label for="realworld_postalcode">Postal Code
+                    <input id="realworld_official"></input>
+                </label>
+
+            <h2>Category </h2>
+            <select id="charity_category" name="charity_category"><option value=""></option>
+                <option value="Animals and pets">Animals and pets</option>
+                <option value="Art and culture">Art and culture</option>
+                <option value="Armed services and ex-serivces">Armed services and ex-serivces</option>
+                <option value="Children">Children</option>
+                <option value="Community Care">Community care</option>
+                <option value="Crime, prisoners and ex-offenders">Crime, prisoners and ex-offenders</option>
+                <option value="Disability">Disability</option>
+                <option value="Domestic Violence">Domestic violence</option>
+                <option value="Drugs and addictions">Drugs and addictions</option>
+                <option value="Education, literacy and Science and Technology">Education, literacy and science and technology</option>
+                <option value="Elderly">Elderly</option>
+                <option value="Emergency Services">Emergency services</option>
+                <option value="Environment and conservation">Environment and conservation</option>
+                <option value="Family welfare">Family welfare</option>
+                <option value="Finance and Money">Finance and money</option>
+                <option value="Food, farming and rural affairs">Food, farming and rural affairs</option>
+                <option value="Gay, lesbian, bi and transsexual">Gay, lesbian, bi and transsexual</option>
+                <option value="Health, medicine, hospitals and hospices">Health, medicine, hospitals and hospices</option>
+                <option value="Heritage and regeneration">Heritage and regeneration</option>
+                <option value="Housing and homelessness">Housing and homelessness</option>
+                <option value="Human and civil  rights">Human and civil rights</option>
+                <option value="International development and disaster relief">International development and disaster relief</option>
+                <option value="Legal Aid and Justice">Legal aid and justice</option>
+                <option value="Mental Health">Mental health</option>
+                <option value="Politics">Politics</option>
+                <option value="Race, ethnicity and refugees">Race, ethnicity and refugees</option>
+                <option value="Religion">Religion</option>
+                <option value="Sport and outdoor activities">Sport and outdoor activities</option>
+                <option value="Think-tanks">Think-tanks</option>
+                <option value="Training and employment">Training and employment</option>
+                <option value="Transport">Transport</option>
+                <option value="Voluntary Sector Umbrellas, Grant Making Trusts / Funders">Voluntary sector umbrellas, grant making trusts / funders</option>
+                <option value="Volunteering">Volunteering</option>
+                <option value="Womens groups">Women's groups</option>
+                <option value="Youth">Youth</option>
+                <option value="Test">Test</option></select>
+            </section>
+
+            <h2>Online Details</h2>
+                <label for="online_website">Website URL
+                    <input id="online_website"></input>
+                </label>
+                <label for="online_publicemail">Public email address
+                    <input id="online_website"></input>
+                </label>
+                <label for="online_twitter">Twitter
+                    <input id="online_twitter"></input>
+                </label>
+                <label for="online_facebook">Facebook URL
+                    <input id="online_facebook"></input>
+                </label>
+                <label for="online_youtube">YouTube Channel
+                    <input id="online_youtube"></input>
+                </label>
+        </section>
+
+        <footer>
+            <div class="tpb">Tech ProBono</div>
+            <div class="msan">matching skills and needs</div>
+        </footer>
+    </div>
+
+
+     <div id="completeSignup" class="module modal">
+        <h1>nearly there …</h1>
+        <div>
+            <p>Thanks for registering with us. We hope we can get people cracking on your projects
+            as soon as possible.</p>
+            <p>One of our Good Cause Liason Folks will be in touch with you soon to help you set
+            up your first Project Page. But before that, let's go ahead and get some more details
+            of your Good Cause so that our technologists know you're coming!</p>
+        </div>
+        <form class="modalform">
+            <div id="signupwithemail">
+                <input class="submitForm" type="submit" id="submitPassword" value="let's go!">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
