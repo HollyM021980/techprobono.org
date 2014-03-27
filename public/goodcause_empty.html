@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/flags.css">
     <!--	<script src="../../jquery/jquery-1.7.2.min.js"></script> -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="js/developer.js" type="text/javascript"></script>
+	<script src="js/goodcause.js" type="text/javascript"></script>
 </head>
 <body>
     <section id="topbar">
@@ -22,14 +22,14 @@
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
                 -->
-                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>Tom Hanks</nobr></a>
+                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>The Childrens' Hospital</nobr></a>
             </div>
             <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
         </div>
     </section>
 
     <div class="main">
-        <div id="profile_cause_button"><p>Good Cause<span class="" id="updateHeadline">Legal Aid and Justice</p></div>
+        <div id="profile_cause_button"><p>Good Cause<span class="" id="updateHeadline"></p></div>
         <nav>
             <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
             <h1 id="goodcause_name">The Children's Hospital</h1>
@@ -49,40 +49,39 @@
                 <select id="charity_category" name="charity_category"><option value=""></option>
                     <option value="Animals and pets">Animals and pets</option>
                     <option value="Art and culture">Art and culture</option>
-                    <option value="Armed services and ex-serivces">Armed services and ex-serivces</option>
+                    <option value="Armed services and ex-serivces" data-short-form="Armed Services">Armed services and ex-serivces</option>
                     <option value="Children">Children</option>
                     <option value="Community Care">Community care</option>
-                    <option value="Crime, prisoners and ex-offenders">Crime, prisoners and ex-offenders</option>
+                    <option value="Crime, prisoners and ex-offenders" data-short-form="Crime & Prisoners">Crime, prisoners and ex-offenders</option>
                     <option value="Disability">Disability</option>
                     <option value="Domestic Violence">Domestic violence</option>
                     <option value="Drugs and addictions">Drugs and addictions</option>
-                    <option value="Education, literacy and Science and Technology">Education, literacy and science and technology</option>
+                    <option value="Education, literacy and Science and Technology" data-short-form="Education">Education, literacy and science and technology</option>
                     <option value="Elderly">Elderly</option>
                     <option value="Emergency Services">Emergency services</option>
-                    <option value="Environment and conservation">Environment and conservation</option>
+                    <option value="Environment and conservation" data-short-form="Environment">Environment and conservation</option>
                     <option value="Family welfare">Family welfare</option>
                     <option value="Finance and Money">Finance and money</option>
-                    <option value="Food, farming and rural affairs">Food, farming and rural affairs</option>
-                    <option value="Gay, lesbian, bi and transsexual">Gay, lesbian, bi and transsexual</option>
-                    <option value="Health, medicine, hospitals and hospices">Health, medicine, hospitals and hospices</option>
-                    <option value="Heritage and regeneration">Heritage and regeneration</option>
-                    <option value="Housing and homelessness">Housing and homelessness</option>
-                    <option value="Human and civil  rights">Human and civil rights</option>
-                    <option value="International development and disaster relief">International development and disaster relief</option>
+                    <option value="Food, farming and rural affairs" data-short-form="Farming & Rural Affairs">Food, farming and rural affairs</option>
+                    <option value="Gay, lesbian, bi, transsexual, intersexual" data-short-form="LGBTI">Gay, lesbian, bi, transsexual and intersexual</option>
+                    <option value="Health, medicine, hospitals and hospices" data-short-form="Health">Health, medicine, hospitals and hospices</option>
+                    <option value="Heritage and regeneration" data-short-form="Heritage & Regeneration">Heritage and regeneration</option>
+                    <option value="Housing and homelessness" data-short-form="Housing & Homeless">Housing and homelessness</option>
+                    <option value="Human and civil rights" data-short-form="Human & Civil Rights">Human and civil rights</option>
+                    <option value="International development and disaster relief" data-short-form="International Development">International development and disaster relief</option>
                     <option value="Legal Aid and Justice">Legal aid and justice</option>
                     <option value="Mental Health">Mental health</option>
                     <option value="Politics">Politics</option>
-                    <option value="Race, ethnicity and refugees">Race, ethnicity and refugees</option>
+                    <option value="Race, ethnicity and refugees" data-short-form="Race & Ethnicity">Race, ethnicity and refugees</option>
                     <option value="Religion">Religion</option>
-                    <option value="Sport and outdoor activities">Sport and outdoor activities</option>
+                    <option value="Sport and outdoor activities" data-short-form="Sport & Outdoor">Sport and outdoor activities</option>
                     <option value="Think-tanks">Think-tanks</option>
-                    <option value="Training and employment">Training and employment</option>
+                    <option value="Training and employment" data-short-form="Training & Employment">Training and employment</option>
                     <option value="Transport">Transport</option>
-                    <option value="Voluntary Sector Umbrellas, Grant Making Trusts / Funders">Voluntary sector umbrellas, grant making trusts / funders</option>
+                    <option value="Voluntary Sector Umbrellas, Grant Making Trusts / Funders" data-short-form="Voluntary Sector">Voluntary sector umbrellas, grant making trusts / funders</option>
                     <option value="Volunteering">Volunteering</option>
                     <option value="Womens groups">Women's groups</option>
                     <option value="Youth">Youth</option>
-                    <option value="Test">Test</option>
                 </select>
                 <label for="description_short" class="description">Short description</label>
                 <textarea id="description_short" class="description"></textarea>
