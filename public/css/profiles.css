@@ -127,11 +127,15 @@ info and details
     cursor: pointer;
 }
 
-input:focus {
+input:focus, textarea:focus, select:focus {
     box-shadow: none;
     outline: none;
-    border: 0;
 }
+
+input:focus, textarea:focus {
+    border-top: 2px solid #a8a3a2;
+}
+
 #addDescription {
     width: 720px;
     margin-left: -300px;

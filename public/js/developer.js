@@ -21,11 +21,9 @@ $(document).ready(function() {
     };
 
     var openModal = function(modal) {
-        /* fix for a bug.. issue nr 2
         if(!okToCloseModals) {
             return false;
         }
-        */
         closeModals();
         $('#' + modal).removeClass("hidden");
         window.addEventListener("click", function windowClickDetector(e) {
@@ -38,9 +36,10 @@ $(document).ready(function() {
             }
         }, false);
     };
-
-    $("submitPassword").click(function() {
+    $("submitPassword").click(function(e) {
+        e.preventDefault();
         okToCloseModals = true;
+        return false;
     })
 
     $("#addContact span").keyup(function(e) {
