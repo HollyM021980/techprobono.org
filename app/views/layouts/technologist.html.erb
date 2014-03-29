@@ -16,12 +16,16 @@
         <div id="topbar_main" class="main">
             <div class="tpb">Tech ProBono</div>
             <div id="topbar_pagelinks">
+              <% if authenticated? %>
                 <a id="loginout" class="topbar_pagelink" data-descr="log out" href="/logout"></a>
                 <!--
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
                 -->
-                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr><%= tech_name %></nobr></a>
+                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr><%= current_user_name  %></nobr></a>
+              <% else %>
+                <a>LOGIN TBD</a>
+              <% end %>
             </div>
             <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
         </div>
