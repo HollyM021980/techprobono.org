@@ -3,6 +3,7 @@ rvm:
 - 1.9.3
 before_script:
 - psql -c 'create database techprobono_test;' -U postgres
+- bundle exec rake db:test:prepare
 deploy:
   provider: openshift
   user: spacehulk@techprobono.org
