@@ -20,9 +20,4 @@ class User < ActiveRecord::Base
   def github
     contacts.find_by(contact_type: "github").try(:value)
   end
-
-  def is_admin?
-    false
-  end
-
 end
