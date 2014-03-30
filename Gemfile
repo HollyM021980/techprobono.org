@@ -21,10 +21,7 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'zeus'
-end
-
-group :development do
-  gem 'pry-rails'
+#  gem 'pry-rails'
 end
 
 group :test do

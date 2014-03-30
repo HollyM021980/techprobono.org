@@ -4,7 +4,8 @@ describe GoodcauseController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show', format: 'json', id: 1
+      org = FactoryGirl.create(:organisation)
+      get 'show', format: 'json', id: org.id
       expect(response).to be_success
     end
   end
