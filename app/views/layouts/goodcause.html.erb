@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title>Tech Pro Bono: Developer</title>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/profiles.css">
+	<link rel="stylesheet" type="text/css" href="css/goodcause.css">
+	<link rel="stylesheet" type="text/css" href="css/flags.css">
+    <!--	<script src="../../jquery/jquery-1.7.2.min.js"></script> -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/js/goodcause.js" type="text/javascript"></script>
+</head>
+<body>
+    <section id="topbar">
+        <div id="topbar_main" class="main">
+            <div class="tpb">Tech ProBono</div>
+            <div id="topbar_pagelinks">
+                <a id="loginout" class="topbar_pagelink" data-descr="log out"></a>
+                <!--
+                <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
+                <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
+                -->
+                <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr>The Childrens' Hospital</nobr></a>
+            </div>
+            <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
+        </div>
+    </section>
+
+    <div class="main">
+        <div id="profile_cause_button"><p>Good Cause<span class="" id="updateHeadline"></p></div>
+        <nav>
+            <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
+            <h1 id="goodcause_name">The Children's Hospital</h1>
+            <ul id="external_details">
+                <li class="location de">Düsseldorf / Germany</li>
+                <li class="twitter">@childrenshospital</li>
+            </ul>
+        </nav>
+
+        <section id="projects" class="form">
+            <h1>Good Causes:</h1>
+            <h2>About you</h2>
+                <label for="realworld_">Official organisation name</label>
+                <input id="realworld_official"></input>
+
+                <label for="charity_category">Your primary cause</label>
+                <select id="charity_category" name="charity_category"><option value=""></option>
+                    <option value="Animals and pets">Animals and pets</option>
+                    <option value="Art and culture">Art and culture</option>
+                    <option value="Armed services and ex-serivces" data-short-form="Armed Services">Armed services and ex-serivces</option>
+                    <option value="Children">Children</option>
+                    <option value="Community Care">Community care</option>
+                    <option value="Crime, prisoners and ex-offenders" data-short-form="Crime & Prisoners">Crime, prisoners and ex-offenders</option>
+                    <option value="Disability">Disability</option>
+                    <option value="Domestic Violence">Domestic violence</option>
+                    <option value="Drugs and addictions">Drugs and addictions</option>
+                    <option value="Education, literacy and Science and Technology" data-short-form="Education">Education, literacy and science and technology</option>
+                    <option value="Elderly">Elderly</option>
+                    <option value="Emergency Services">Emergency services</option>
+                    <option value="Environment and conservation" data-short-form="Environment">Environment and conservation</option>
+                    <option value="Family welfare">Family welfare</option>
+                    <option value="Finance and Money">Finance and money</option>
+                    <option value="Food, farming and rural affairs" data-short-form="Farming & Rural Affairs">Food, farming and rural affairs</option>
+                    <option value="Gay, lesbian, bi, transsexual, intersexual" data-short-form="LGBTI">Gay, lesbian, bi, transsexual and intersexual</option>
+                    <option value="Health, medicine, hospitals and hospices" data-short-form="Health">Health, medicine, hospitals and hospices</option>
+                    <option value="Heritage and regeneration" data-short-form="Heritage & Regeneration">Heritage and regeneration</option>
+                    <option value="Housing and homelessness" data-short-form="Housing & Homeless">Housing and homelessness</option>
+                    <option value="Human and civil rights" data-short-form="Human & Civil Rights">Human and civil rights</option>
+                    <option value="International development and disaster relief" data-short-form="International Development">International development and disaster relief</option>
+                    <option value="Legal Aid and Justice">Legal aid and justice</option>
+                    <option value="Mental Health">Mental health</option>
+                    <option value="Politics">Politics</option>
+                    <option value="Race, ethnicity and refugees" data-short-form="Race & Ethnicity">Race, ethnicity and refugees</option>
+                    <option value="Religion">Religion</option>
+                    <option value="Sport and outdoor activities" data-short-form="Sport & Outdoor">Sport and outdoor activities</option>
+                    <option value="Think-tanks">Think-tanks</option>
+                    <option value="Training and employment" data-short-form="Training & Employment">Training and employment</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Voluntary Sector Umbrellas, Grant Making Trusts / Funders" data-short-form="Voluntary Sector">Voluntary sector umbrellas, grant making trusts / funders</option>
+                    <option value="Volunteering">Volunteering</option>
+                    <option value="Womens groups">Women's groups</option>
+                    <option value="Youth">Youth</option>
+                </select>
+                <label for="description_short" class="description">Short description</label>
+                <textarea id="description_short" class="description"></textarea>
+                <label for="description_long" class="description">Detailed description</label>
+                <textarea id="description_long" class="description"></textarea>
+
+            <h2>Real World Details</h2>
+                <label for="realworld_road">Road name</label>
+                <input id="realworld_official"></input>
+                <label for="realworld_number">Building number</label>
+                <input id="realworld_official"></input>
+                <label for="realworld_towncity">Town / City</label>
+                <input id="realworld_official"></input>
+                <label for="realworld_region">County / Region</label>
+                <input id="realworld_official" placeholder="optional"></input>
+                <label for="realworld_country">Country</label>
+                <input id="realworld_official"></input>
+                <label for="realworld_postalcode">Postal Code</label>
+                <input id="realworld_official"></input>
+
+            <h2>Online Details</h2>
+                <label for="online_website">Website URL</label>
+                <input id="online_website"></input>
+                <label for="online_publicemail">Public email address</label>
+                <input id="online_website"></input>
+                <label for="online_twitter">Twitter</label>
+                <input id="online_twitter" placeholder="optional"></input>
+                <label for="online_facebook">Facebook URL</label>
+                <input id="online_facebook" placeholder="optional"></input>
+                <label for="online_youtube">YouTube Channel</label>
+                <input id="online_youtube" placeholder="optional"></input>
+
+            <section>
+                <button type="submit" class="submitForm" name="submittech" id="submitech">Submit</button>
+            </section>
+
+        </section>
+
+        <footer>
+            <div class="tpb">Tech ProBono</div>
+            <div class="msan">matching skills and needs</div>
+        </footer>
+
+    </div>
+
+     <div id="completeSignup" class="module modal hidden">
+        <h1>nearly there …</h1>
+        <div>
+            <p>Thanks for registering with us. We hope we can get people cracking on your projects
+            as soon as possible.</p>
+            <p>One of our Good Cause Liason Folks will be in touch with you soon to help you set
+            up your first Project Page. But before that, let's go ahead and get some more details
+            of your Good Cause so that our technologists know you're coming!</p>
+        </div>
+        <form class="modalform">
+            <div id="signupwithemail">
+                <input class="submitForm" type="submit" id="submitPassword" value="let's go!">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
