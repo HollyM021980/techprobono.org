@@ -112,6 +112,7 @@ select {
 textarea {
     width: 360px;
     margin-top: 2px;
+    resize: none;
 }
 
 label.description {
