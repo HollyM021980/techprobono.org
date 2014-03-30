@@ -32,3 +32,8 @@ end
 group :test do
   gem 'factory_girl_rails'
 end
+
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous', branch: 'rails-4.1'
+gem 'activeadmin', github: 'gregbell/active_admin'
