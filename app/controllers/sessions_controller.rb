@@ -11,8 +11,15 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    id = session[:user_id]
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to technologist_path(find_user(id)), :notice => "Logged out!"
+  end
+
+  private
+
+  def find_user(id)
+    User.find(id)
   end
 end
 
