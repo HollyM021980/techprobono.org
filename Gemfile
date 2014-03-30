@@ -7,9 +7,7 @@ gem 'sdoc',          group: :doc, require: false
 gem 'thin'
 gem 'rack-timeout'
 gem 'acts-as-taggable-on'
-gem 'omniauth-twitter'
-gem 'omniauth'
-
+gem 'sprockets', '2.11.0'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', require: 'bcrypt'
