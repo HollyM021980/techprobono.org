@@ -18,7 +18,14 @@ FactoryGirl.define do
   factory :organisation do
     sequence(:name){|n| "Good Cause#{n}"}
     sequence(:email){|n| "email#{n}@goodcause.com"}
-    association :contacts, factory: :contact
+
+    after(:build) do |organisation|
+      organisation.contacts = build_list(:contact, 2, contactable: organisation)
+    end
+
+    after(:create) do |organisation|
+      organisation.contacts.each { |c| c.save }
+    end
   end
 
 end

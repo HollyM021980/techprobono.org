@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def authenticate_admin!
+     redirect_to root_path unless current_user.admin?
+  end
+
+  def current_admin_user
+    current_user.admin? ? current_user : nil
+  end
+
   protected
 
   def create_session(user)

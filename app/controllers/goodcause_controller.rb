@@ -1,8 +1,9 @@
 class GoodcauseController < ApplicationController
   respond_to :json, :html
+  layout 'goodcause'
 
   def show
-    respond_with('OK')
+    respond_with(goodcause_repo.find(params[:id]))
   end
 
   def create
