@@ -388,6 +388,46 @@ module formatting
     font-size: 1rem;
 }
 
+#loginModal div {
+    padding: 12px 18px;
+}
+
+#loginModal input[type="submit"] {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    float: right;
+}
+
+#loginModal p {
+    display: none;
+}
+
+
+#loginModal.loginerror p {
+    display: block;
+    color: rgb(171,52,50);
+}
+
+#loginModal.loginerror p.resend {
+    color: rgb(33,119,173);
+}
+
+label[for="login_email"], label[for="login_password"] {
+    float: left;
+    width: 25%;
+    padding-left: 0px;
+    left: 0px;
+    top: 0.8rem;
+}
+
+
+#login_email, #login_password {
+    float: left;
+    width: 65%;
+    border-top: 1px solid #ccc
+}
+
+
 /*
 technology list
 */
