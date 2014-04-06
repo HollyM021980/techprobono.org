@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     var documentHeight = $(document).height();
 
     var closeModals = function() {
@@ -20,12 +19,17 @@ $(document).ready(function() {
         return false;
     };
 
-    $("#techformdiv").slideUp();
-    $("#goodcauseformdiv").slideUp();
-
     $("#loginout").click(function() {
         openModal("loginModal");
     });
+
+    $("#login_cancel_logout").click(function() {
+        closeModals();
+    });
+
+
+    $("#techformdiv").slideUp();
+    $("#goodcauseformdiv").slideUp();
 
     $("#cancelSubmitPassword").click(function() {
         closeModals();
@@ -123,13 +127,15 @@ $(document).ready(function() {
     });
 
     $("#submitech").click(function(event) {
-        var skills = [];
         var inputs = $('#techform input');
+        var skills = [];
         $('#skillslist span').each(function(i, obj) {
             skills.push(obj.innerHTML);
         })
         $('#skills').val(skills.join(","));
         var serialised = [];
+
+
         if ($("#github")) {
             if ($("#github")[0].value && $("#github")[0].value.indexOf("//") !== -1) {
                 $("#github")[0].value = $("#github")[0].value.split("//")[1];
