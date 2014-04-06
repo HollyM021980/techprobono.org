@@ -31,6 +31,10 @@ module TechnologistHelper
     user.email
   end
 
+  def tech_contacts
+    tech.contacts
+  end
+
   private
 
   def repo
