@@ -17,7 +17,7 @@
             <div class="tpb">Tech ProBono</div>
             <div id="topbar_pagelinks">
               <% if authenticated? %>
-                <a id="loginout" class="topbar_pagelink" data-descr="log out" href="/logout"></a>
+                <a id="loginout" class="topbar_pagelink modaltrigger" data-descr="log out" href="/logout"></a>
                 <!--
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
@@ -32,7 +32,7 @@
     </section>
 
     <div class="main">
-      <div id="tech_button"><p>Technologist<span class="<%= add_more %>" id="updateHeadline"><%= tech_professional_headline  %></p></div>
+      <div id="tech_button"><p>Technologist<span class="<%= add_more %> modaltrigger" id="updateHeadline"><%= tech_professional_headline  %></p></div>
     <nav>
         <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
         <ul id="external_details">
@@ -137,7 +137,7 @@ Numbered list:
             <p>But firstly, most importantly, keep your account safe. Add a password:</p>
             <%= form_for(:technologist, url: technologists_update_path, id:"techform", class:"modalform") do %>
                 <div id="signupwithemail">
-                    <label for="password"></label>
+                    <label for="password" class="password"></label>
                     <input name="password" type="password" id="password" />
                     <input class="submitForm" type="submit" id="submitPassword">
                 </div>
@@ -164,7 +164,7 @@ Numbered list:
             <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
             <input class="submitForm" type="submit" id="submitPassword" value="Login">
             <% end %>
-            <p class="resend">Or click here to reset your password</p>
+            <p class="resend">Or click here to resend</p>
         </div>
         <% end %>
         <!-- end logged out section -->
