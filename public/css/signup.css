@@ -29,34 +29,9 @@ button {
     margin: 2rem 0 !important;
 }
 
-#loginModal div {
-    padding: 12px 18px;
-}
-
-#loginModal #submitPassword {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    float: right;
-}
-
-label[for="login_email"], label[for="login_password"] {
-    float: left;
-    width: 25%;
-    padding-left: 0px;
-    left: 0px;
-    top: 0.8rem;
-}
-
-#techform  label[for="email"] {
+#techform label[for="email"] {
     padding-left: 16%;
     width: 45%;
-}
-
-
-#login_email, #login_password {
-    float: left;
-    width: 65%;
-    border-top: 1px solid #ccc
 }
 
 /**

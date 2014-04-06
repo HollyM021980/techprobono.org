@@ -21,7 +21,7 @@
         <div id="topbar_main" class="main">
             <div class="tpb">Tech ProBono</div>
             <div id="topbar_pagelinks">
-                <a id="loginout" class="topbar_pagelink" data-descr="log out"></a>
+                <a id="loginout" class="topbar_pagelink modaltrigger" data-descr="log out"></a>
                 <!--
                 <a id="profile_edit" class="topbar_pagelink" data-descr="edit your profile"></a>
                 <a id="share" class="topbar_pagelink" data-descr="change settings"></a>
@@ -33,25 +33,25 @@
     </section>
 
     <div class="main">
-        <div id="tech_button"><p>Technologist<span class="addmore" id="updateHeadline">+ professional headline</p></div>
+        <div id="tech_button"><p>Technologist<span class="addmore modaltrigger" id="updateHeadline">+ professional headline</p></div>
         <nav>
             <div id="profile_pic"><form><input type="file" id="fileupload"></form></div>
             <ul id="external_details">
                 <li class="location us">New York / USA</li>
                 <li class="twitter">@childrenshospital</li>
-                <li class="addmore">+ add contact</li>
+                <li class="addmore modaltrigger">+ add contact</li>
             </ul>
         </nav>
 
         <section id="projects">
             <section>
             <h1 id="developer_name">Tom Hanks</h1>
-            <p class="addmore" id="updateIntro">+ add an introduction</p>
+            <p class="addmore modaltrigger" id="updateIntro">+ add an introduction</p>
                 <ul id="techlist" class="techlist captioned" title="Technologies I use">
                     <li>javascript</dd>
                     <li>ajax</dd>
                     <li>html5</dd>
-                    <li class="addmore">+ add more technologies</li>
+                    <li class="addmore modaltrigger">+ add more technologies</li>
                 </dl>
             </section>
         </section>
@@ -143,6 +143,28 @@ Numbered list:
                 </div>
             </form>
         </div>
+    </div>
+    <div id="loginModal" class="modal module hidden">
+        <!-- display this for logged in users -->
+        <h1>logout</h1>
+        <div>
+            <input class="cancel" type="cancel" id="login_cancel_logout" value="cancel">
+            <input class="submitForm" type="submit" id="login_logout" value="logout">
+        </div>
+        <!-- end logged in section -->
+
+        <!-- display this for logged out users -->
+        <h1>login</h1>
+        <div>
+            <label for="login_email" data-title="email">email</label>
+            <input type="email" name="login_email" id="login_email"></input>
+            <label for="login_password" data-title="password">password</label>
+            <input name="login_password" type="password" id="login_password" />
+            <br>
+            <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
+            <input class="submitForm" type="submit" id="submitPassword" value="Login">
+        </div>
+        <!-- end logged out section -->
     </div>
 </body>
 </html>

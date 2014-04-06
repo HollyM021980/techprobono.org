@@ -143,5 +143,29 @@ Numbered list:
             <% end %>
         </div>
     </div>
+    <div id="loginModal" class="modal module hidden">
+        <% if authenticated? %>
+        <h1>logout</h1>
+        <div>
+            <input class="cancel" type="cancel" id="login_cancel_logout" value="cancel">
+            <input class="submitForm" type="submit" id="login_logout" value="logout">
+        </div>
+        <% else %>
+        <h1>login</h1>
+        <div>
+            <%= form_tag sessions_path, class:"modalform"  do %>
+            <label for="login_email" data-title="email">email</label>
+            <input type="email" name="login_email" id="login_email"></input>
+            <label for="login_password" data-title="password">password</label>
+            <input name="login_password" type="password" id="login_password" />
+            <br>
+            <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
+            <input class="submitForm" type="submit" id="submitPassword" value="Login">
+            <% end %>
+        </div>
+        <% end %>
+        <!-- end logged out section -->
+    </div>
+
 </body>
 </html>
