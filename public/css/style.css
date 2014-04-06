@@ -398,6 +398,20 @@ module formatting
     float: right;
 }
 
+#loginModal p {
+    display: none;
+}
+
+
+#loginModal.loginerror p {
+    display: block;
+    color: rgb(171,52,50);
+}
+
+#loginModal.loginerror p.resend {
+    color: rgb(33,119,173);
+}
+
 label[for="login_email"], label[for="login_password"] {
     float: left;
     width: 25%;
