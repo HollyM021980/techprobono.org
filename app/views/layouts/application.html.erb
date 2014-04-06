@@ -119,15 +119,16 @@
             <input class="cancel" type="cancel" id="cancelSubmitPassword" value="cancel">
             <input class="submitForm" type="submit" id="submitPassword" value="Login">
         <% end %>
-            <p class="resend">Or click here to reset your password</p>
+            <!-- <p class="resend">Or click here to reset your password</p> -->
         </div>
     </div>
-<% if authentication_errors? %>
 
+<% if authentication_errors? %>
     <script>
         $("loginModal").removeClass("hidden");
         $("loginModal").addClass("loginerror");
     </script>
 <% end %>
+
 </body>
 </html>

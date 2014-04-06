@@ -77,7 +77,7 @@ $(document).ready(function() {
                 for (var i = 0; i < data.contacts.length; i++) {
                         li = document.createElement("LI");
                         li.className = data.contacts[i].contact_type;
-                        li.innerHTML = data.contacts[i].value;
+                        li.innerHTML = data.contacts[i].contact_value;
                         $('#external_details').append(li);
                 }
                 var addmore = document.createElement("LI");
