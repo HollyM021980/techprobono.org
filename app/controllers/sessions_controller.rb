@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to technologist_path(user), :notice => "Logged in!"
     else
+      binding.pry
       flash.now.alert = "Invalid email or password"
       redirect_to root_url
     end

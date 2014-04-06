@@ -36,4 +36,25 @@ describe TechnologistsController do
       }.to change(Contact, :count).by(3)
     end
   end
+
+  describe "POST 'update'" do
+
+    let(:current_user) { FactoryGirl.create(:user, contacts:[]) }
+
+    let(:contacts) do
+      { 
+        "0" => {contact_type: "twitter", value: "techprobono"},
+        "1" => {contact_type: "github", value: "techprobono"}
+      }
+    end
+
+    before do
+      controller.stub(:current_user).and_return(current_user)
+    end
+
+    xit "adds contacts" do
+      post :update, contacts: contacts
+      expect(controller.technologist_repo).to receive(:update).with(current_user, contacts)
+    end
+  end
 end

@@ -65,14 +65,14 @@
     <div id="addContact" class="module modal hidden">
         <h1>add contact details</h1>
         <div>
-            <label for="location" class="location"><input value="New York, USA" id="location" placeholder="+ add contact"></input></label>
-            <label for="personal" class="personal"><input value="childrenshospital.com" id="personal" placeholder="+ add contact"></input></label>
-            <label for="linkedin" class="linkedin"><input value="" id="linkedin" placeholder="+ add contact"></input></label>
-            <label for="lanyrd" class="lanyrd"><input value="" id="lanyrd" placeholder="+ add contact"></input></label>
-            <label for="github" class="github"><input value="" id="github" placeholder="+ add contact"></input></label>
-            <label for="twitter" class="twitter"><input value="@childrenshospital" id="twitter" placeholder="+ add contact"></input></label>
-            <label for="tumblr" class="tumblr"><input value="" id="tumblr" placeholder="+ add contact"></input></label>
-            <label for="meetup" class="meetup"><input value="" id="meetup" placeholder="+ add contact"></input></label>
+            <label for="location" class="location"><input value="<%= tech.contact_value("location") %>" id="location" placeholder="+ add contact"></input></label>
+            <label for="personal" class="personal"><input value="<%= tech.contact_value("personal") %>" id="personal" placeholder="+ add contact"></input></label>
+            <label for="linkedin" class="linkedin"><input value="<%= tech.contact_value("linkedin") %>" id="linkedin" placeholder="+ add contact"></input></label>
+            <label for="lanyrd" class="lanyrd"><input value="<%= tech.contact_value("lanyrd") %>" id="lanyrd" placeholder="+ add contact"></input></label>
+            <label for="github" class="github"><input value="<%= tech.contact_value("github") %>" id="github" placeholder="+ add contact"></input></label>
+            <label for="twitter" class="twitter"><input value="<%= tech.contact_value("twitter") %>" id="twitter" placeholder="+ add contact"></input></label>
+            <label for="tumblr" class="tumblr"><input value="<%= tech.contact_value("tumblr") %>" id="tumblr" placeholder="+ add contact"></input></label>
+            <label for="meetup" class="meetup"><input value="<%= tech.contact_value("meetup") %>" id="meetup" placeholder="+ add contact"></input></label>
             <input class="submitForm" type="submit" id="submitContacts">
         </div>
     </div>

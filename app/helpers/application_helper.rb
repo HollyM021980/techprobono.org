@@ -8,4 +8,8 @@ module ApplicationHelper
     current_user.present?
   end
   alias_method :authenticated?, :current_user?
+
+  def authentication_errors?
+  	flash.alert.present?
+  end
 end

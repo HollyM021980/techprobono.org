@@ -4,7 +4,7 @@ module Repos
     ACCOUNT_TYPE = User::AccountType::TECHNOLOGIST
 
     def create(params)
-      User.create(parse_params(params))
+      User.create(create_params(params))
     end
 
     def find(id)
@@ -13,7 +13,15 @@ module Repos
     end
 
     def update(user, params)
-      user.update_attributes(parse_params(params))
+      user.update_attributes(update_params(params))
+      if params[:contacts].present?
+        parse_update_contacts(params[:contacts]).each do |contact|
+          user.contacts.find_or_create_by(contact_type: contact[:contact_type]).tap do |c|
+            c.value = contact[:value]
+            c.save
+          end
+        end
+      end
       user
     end
 
@@ -21,9 +29,15 @@ module Repos
       User.new(account_type)
     end
 
-    def parse_params(params)
+    def update_params(params)
+      partial_params = create_params(params)
+      partial_params.delete(:contacts_attributes)
+      partial_params
+    end
+
+    def create_params(params)
       {
-        contacts_attributes: parse_contacts(params),
+        contacts_attributes: parse_create_contacts(params),
         professional_headline: params[:professional_headline],
         name: params[:name],
         email: params[:email],
@@ -36,7 +50,11 @@ module Repos
 
     private
 
-    def parse_contacts(params)
+    def parse_update_contacts(contacts)
+      contacts.map { |_, v| v }
+    end
+
+    def parse_create_contacts(params)
       [:twitter, :github, :portfolio].map do |c|
         next if params[c].blank?
         {

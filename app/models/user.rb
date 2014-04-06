@@ -14,10 +14,28 @@ class User < ActiveRecord::Base
   end
 
   def twitter_handle
-    contacts.find_by(contact_type: "twitter").try(:value)
+    contact_value("twitter")
   end
 
   def github
-    contacts.find_by(contact_type: "github").try(:value)
+    contact_value("github")
+  end
+
+  def contact_value(contact)
+    contacts.find_by(contact_type: contact).try(:value)
+  end
+
+  def as_json(*args)
+    {
+      name: name,
+      email: email,
+      professional_headline: professional_headline,
+      contacts: contacts.map do |contact|
+        {
+          contact_type: contact.contact_type,
+          contact_value: contact.value
+        }
+      end
+    }
   end
 end
