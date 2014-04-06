@@ -21,7 +21,6 @@ $(document).ready(function() {
     };
 
     var openModal = function(modal) {
-        debugger;
         if(!okToCloseModals) {
             return false;
         }
