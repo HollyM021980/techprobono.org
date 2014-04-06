@@ -73,6 +73,7 @@ $(document).ready(function() {
             data: params,
             dataType: "text/json",
             success: function(data) {
+                debugger;
                 $('#external_details').empty();
                 for (var i = 0; i < data.contacts.length; i++) {
                         li = document.createElement("LI");
