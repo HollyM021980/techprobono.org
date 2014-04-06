@@ -40,8 +40,6 @@ class TechnologistsController < ApplicationController
     end
   end
 
-  private
-
   def technologist_repo
     Repos::Technologist.new
   end
