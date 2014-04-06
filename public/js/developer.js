@@ -12,7 +12,7 @@ var isDescendant = function (parent, child) {
 $(document).ready(function() {
 
     var documentHeight = $(document).height();
-    var okToCloseModals = false;
+    var okToCloseModals = true;
 
     // $('window').unbind("click");
 
@@ -21,6 +21,7 @@ $(document).ready(function() {
     };
 
     var openModal = function(modal) {
+        debugger;
         if(!okToCloseModals) {
             return false;
         }
