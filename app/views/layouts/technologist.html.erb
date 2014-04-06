@@ -39,21 +39,21 @@
           <% tech_contacts.each do |contact| %>
             <li class="<%= contact.contact_type %>"><%= contact.value %></li>
           <% end %>
-            <li class="addmore">+ add contact</li>
+            <li class="addmore modaltrigger">+ add contact</li>
         </ul>
     </nav>
 
     <section id="projects">
         <section>
-        <h1 id="developer_name"><%= tech_name %></h1>
-        <p id="developer_bio"></p>
-        <p class="addmore" id="updateIntro">+ add an introduction</p>
+            <h1 id="developer_name"><%= tech_name %></h1>
+            <p id="developer_bio"></p>
+            <p class="addmore modaltrigger" id="updateIntro">+ add an introduction</p>
             <ul id="techlist" class="techlist captioned" title="Technologies I use">
                 <% tech.skill_list.each do |skill| %>
                     <li><%= skill %></li>
                 <% end %>
-                <li class="addmore">+ add more technologies</li>
-            </dl>
+                <li class="addmore modaltrigger">+ add more technologies</li>
+            </ul>
             </section>
         </section>
 
