@@ -51,7 +51,8 @@ $(document).ready(function() {
         return false;
     })
 
-    $("#submitContacts").click(function() {
+    $("#submitContacts").click(function(e) {
+        e.preventDefault();
         var inputs = document.querySelectorAll("#addContact input"),
             params = {
                 contacts: []
@@ -65,34 +66,29 @@ $(document).ready(function() {
                 })
             }
         }
-
         $.ajax({
             type: "POST",
             beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             url: "/technologists/update",
             data: params,
-            dataType: "text/json",
-            success: function(data) {
-                debugger;
-                $('#external_details').empty();
-                for (var i = 0; i < data.contacts.length; i++) {
-                        li = document.createElement("LI");
-                        li.className = data.contacts[i].contact_type;
-                        li.innerHTML = data.contacts[i].contact_value;
-                        $('#external_details').append(li);
-                }
-                var addmore = document.createElement("LI");
-                addmore.className = "addmore";
-                addmore.innerHTML = "+ add contact";
-                addmore.addEventListener("click", function() {
-                    openModal("addContact");
-                }, false);
-                $('#external_details').append(addmore);
-                closeModals();
-            },
-            error: function() {
-                // do something here. Would be nice.
+            dataType: "text/json"})
+        .done(function(data) {
+            console.log(data);
+            $('#external_details').empty();
+            for (var i = 0; i < data.contacts.length; i++) {
+                    li = document.createElement("LI");
+                    li.className = data.contacts[i].contact_type;
+                    li.innerHTML = data.contacts[i].contact_value;
+                    $('#external_details').append(li);
             }
+            var addmore = document.createElement("LI");
+            addmore.className = "addmore";
+            addmore.innerHTML = "+ add contact";
+            addmore.addEventListener("click", function() {
+                openModal("addContact");
+            }, false);
+            $('#external_details').append(addmore);
+            closeModals();
         });
 
     });
@@ -137,16 +133,13 @@ $(document).ready(function() {
                 url: "/technologists/update",
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
                 // FIXME: node.innerHTML is empty when you submit it to DB.
-                data: { "professional_headline": node.value},
-                success: function(json) {
+                data: { "professional_headline": node.value}
+            })
+            .done(function(json) {
                     var head = $('#updateHeadline')[0];
                     head.style.fontStyle = "normal";
                     head.innerHTML = node.value;
                     closeModals();
-                },
-                error: function() {
-                    // do something here. Would be nice.
-                }
             });
         }
     });
