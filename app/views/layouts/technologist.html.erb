@@ -24,7 +24,7 @@
                 -->
                 <a id="user" class="topbar_pagelink_user" data-descr="back to your project page"><nobr><%= current_user_name  %></nobr></a>
               <% else %>
-                <a>LOGIN TBD</a>
+                <a id="loginout" class="topbar_pagelink modaltrigger" data-descr="log in" href="/logout"></a>
               <% end %>
             </div>
             <div id="site_search"><input id="search_string" name="search_string" autofocus="autofocus" value="" placeholder=""></div>
