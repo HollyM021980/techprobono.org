@@ -86,8 +86,10 @@ $(document).ready(function() {
         }
 
         $.ajax({
+            type: "POST",
             url: "/technologists/update",
             data: params,
+            beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             success: function(data, message, object){
                 console.log("data: ", data);
                 console.log("message: ", message);
