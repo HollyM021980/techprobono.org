@@ -14,6 +14,24 @@ $(document).ready(function() {
     var documentHeight = $(document).height();
     var okToCloseModals = true;
 
+    var simpleAjax = function(url,callback) {
+		if(!url) {url = "ajax.php"}
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET",url,true);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4) {
+				var response =  xhr.responseText;
+				if(response != "error") {
+					callback(response);
+				}
+			}
+		};
+		xhr.send(null);
+		var cancel = function() {
+			xhr.abort();
+		};
+    };
+
     // $('window').unbind("click");
 
     var closeModals = function() {
@@ -66,13 +84,33 @@ $(document).ready(function() {
                 })
             }
         }
-        $.ajax({
-            type: "POST",
+
+        simpleAjax("/technologists/update", function(data) {
+            console.log("simple ajax");
+            console.log(data);
+            $('#external_details').empty();
+            for (var i = 0; i < data.contacts.length; i++) {
+                    li = document.createElement("LI");
+                    li.className = data.contacts[i].contact_type;
+                    li.innerHTML = data.contacts[i].contact_value;
+                    $('#external_details').append(li);
+            }
+            var addmore = document.createElement("LI");
+            addmore.className = "addmore";
+            addmore.innerHTML = "+ add contact";
+            addmore.addEventListener("click", function() {
+                openModal("addContact");
+            }, false);
+            $('#external_details').append(addmore);
+            closeModals();
+        })
+
+        /*
+            type: "GET",
             beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             url: "/technologists/update",
             data: params,
-            dataType: "text/json"})
-        .done(function(data) {
+            dataType: "text/json"}).done(function(data) {
             console.log(data);
             $('#external_details').empty();
             for (var i = 0; i < data.contacts.length; i++) {
@@ -90,6 +128,7 @@ $(document).ready(function() {
             $('#external_details').append(addmore);
             closeModals();
         });
+        */
 
     });
 
