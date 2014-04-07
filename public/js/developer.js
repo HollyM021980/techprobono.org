@@ -89,37 +89,30 @@ $(document).ready(function() {
             type: "POST",
             url: "/technologists/update",
             data: params,
-            beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             success: function(data, message, object){
-                console.log("data: ", data);
-                console.log("message: ", message);
+                $('#external_details').empty();
+                if(data.contacts) {
+                    for (var i = 0; i < data.contacts.length; i++) {
+                            li = document.createElement("LI");
+                            li.className = data.contacts[i].contact_type;
+                            li.innerHTML = data.contacts[i].contact_value;
+                            $('#external_details').append(li);
+                    }
+                } else {
+                    console.log("no contacts");
+                    console.log(data);
+                }
+                var addmore = document.createElement("LI");
+                addmore.className = "addmore";
+                addmore.innerHTML = "+ add contact";
+                addmore.addEventListener("click", function() {
+                    openModal("addContact");
+                }, false);
+                $('#external_details').append(addmore);
                 closeModals();
             }
         });
-        /*
-            type: "POST",
-            beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-            data: params,
-            dataType: "json"}).done(function(data) {
-            console.log(data);
-            $('#external_details').empty();
-            for (var i = 0; i < data.contacts.length; i++) {
-                    li = document.createElement("LI");
-                    li.className = data.contacts[i].contact_type;
-                    li.innerHTML = data.contacts[i].contact_value;
-                    $('#external_details').append(li);
-            }
-            var addmore = document.createElement("LI");
-            addmore.className = "addmore";
-            addmore.innerHTML = "+ add contact";
-            addmore.addEventListener("click", function() {
-                openModal("addContact");
-            }, false);
-            $('#external_details').append(addmore);
-            closeModals();
-        });
-        */
-
     });
 
     $("#emailsignup").click(function() {
@@ -165,10 +158,10 @@ $(document).ready(function() {
                 data: { "professional_headline": node.value}
             })
             .done(function(json) {
-                    var head = $('#updateHeadline')[0];
-                    head.style.fontStyle = "normal";
-                    head.innerHTML = node.value;
-                    closeModals();
+                var head = $('#updateHeadline')[0];
+                head.style.fontStyle = "normal";
+                head.innerHTML = node.value;
+                closeModals();
             });
         }
     });
