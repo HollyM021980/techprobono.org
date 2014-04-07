@@ -80,12 +80,13 @@ $(document).ready(function() {
             if(inputs[i].value) {
                 params.contacts.push({
                    contact_type:  inputs[i].id,
-                   value: inputs[i].value
+                   contact_value: inputs[i].value
                 })
             }
         }
+        var url = "/technologists/update?" + JSON.stringify(params);
 
-        simpleAjax("/technologists/update", function(data) {
+        simpleAjax(url, function(data) {
             console.log("simple ajax");
             console.log(data);
             $('#external_details').empty();
