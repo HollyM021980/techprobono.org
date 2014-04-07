@@ -84,34 +84,21 @@ $(document).ready(function() {
                 })
             }
         }
-        var url = "/technologists/update?" + JSON.stringify(params);
 
-        simpleAjax(url, function(data) {
-            console.log("simple ajax");
-            console.log(data);
-            $('#external_details').empty();
-            for (var i = 0; i < data.contacts.length; i++) {
-                    li = document.createElement("LI");
-                    li.className = data.contacts[i].contact_type;
-                    li.innerHTML = data.contacts[i].contact_value;
-                    $('#external_details').append(li);
-            }
-            var addmore = document.createElement("LI");
-            addmore.className = "addmore";
-            addmore.innerHTML = "+ add contact";
-            addmore.addEventListener("click", function() {
-                openModal("addContact");
-            }, false);
-            $('#external_details').append(addmore);
-            closeModals();
-        })
-
-        /*
-            type: "GET",
-            beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+        $.ajax({
             url: "/technologists/update",
             data: params,
-            dataType: "text/json"}).done(function(data) {
+            success: function(data, message, object){
+                console.log("data: ", data);
+                console.log("message: ", message);
+                closeModals();
+            }
+        });
+        /*
+            type: "POST",
+            beforeSend: function(xhr) {console.log("data:", params); xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            data: params,
+            dataType: "json"}).done(function(data) {
             console.log(data);
             $('#external_details').empty();
             for (var i = 0; i < data.contacts.length; i++) {
